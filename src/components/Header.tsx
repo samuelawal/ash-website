@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/content/siteData";
@@ -10,6 +11,9 @@ import { siteData } from "@/content/siteData";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const useSolidHeader = !isHome || isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +26,7 @@ export default function Header() {
   return (
     <div className="fixed top-0 left-0 w-full z-50">
       {/* Top Banner (Hidden on scroll on desktop to save space) */}
-      <div className={`bg-brand-teal-950/40 text-brand-teal-100/80 border-b border-brand-teal-900/30 text-xs px-4 transition-all duration-300 ease-in-out ${isScrolled ? "max-h-0 py-0 overflow-hidden border-b-0" : "max-h-12 py-2.5 overflow-hidden"}`}>
+      <div className={`bg-brand-teal-950/40 text-brand-teal-100/80 border-b border-brand-teal-900/30 text-xs px-4 transition-all duration-300 ease-in-out ${useSolidHeader && isScrolled ? "max-h-0 py-0 overflow-hidden border-b-0" : "max-h-12 py-2.5 overflow-hidden"}`}>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 hover:text-brand-gold-400 transition-colors">
@@ -44,14 +48,14 @@ export default function Header() {
       {/* Sticky Header */}
       <header
         className={`w-full transition-all duration-500 ${
-          isScrolled
+          useSolidHeader
             ? "bg-brand-teal-950/90 backdrop-blur-lg border-b border-brand-teal-800/40 py-3 shadow-lg"
             : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
-          <Link href="#" className="relative z-50 flex items-center">
+          <Link href="/" className="relative z-50 flex items-center">
             <div className="relative w-40 sm:w-48 h-10 transition-transform hover:scale-[1.02] duration-200">
               <Image
                 src={siteData.logos.white}

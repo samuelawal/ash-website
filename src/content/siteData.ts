@@ -60,6 +60,24 @@ export interface BlogPostItem {
   excerpt: string;
 }
 
+export interface JobPosting {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  posted: string;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+  applicationUrl: string;
+}
+
+export interface CareerBenefit {
+  title: string;
+  description: string;
+}
+
 export const siteData = {
   logos: {
     dark: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/Asset-21-scaled.png",
@@ -68,12 +86,13 @@ export const siteData = {
   
   navigation: {
     links: [
-      { name: "Home", href: "#" },
-      { name: "About", href: "#about" },
-      { name: "Services", href: "#services" },
-      { name: "Projects", href: "#projects" },
-      { name: "Updates", href: "#updates" },
-      { name: "Contact", href: "#contact" },
+      { name: "Home", href: "/" },
+      { name: "About", href: "/#about" },
+      { name: "Services", href: "/#services" },
+      { name: "Projects", href: "/#projects" },
+      { name: "Updates", href: "/#updates" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/#contact" },
     ],
     contactInfo: {
       phone: "+234 1 888 0192",
@@ -81,7 +100,7 @@ export const siteData = {
     },
     cta: {
       text: "Get in Touch",
-      href: "#contact",
+      href: "/#contact",
     },
   },
 
@@ -299,6 +318,121 @@ export const siteData = {
     placeholder: "Enter your professional email",
     cta: "Subscribe Now",
   },
+
+  careers: {
+    title: "Build Africa's Energy Future",
+    subtitle: "Join a team of engineers, operators, and innovators deploying intelligent decentralized energy infrastructure across the continent.",
+    intro: "We're looking for people who want to solve hard problems at the intersection of clean energy, software, and community impact. Each role below links to a dedicated application form.",
+    applicationFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeYOOgc2RtxnZLPh8fqamHrO7tB1f6_ML8pjXMp2EcO4-0ICQ/viewform",
+    benefits: [
+      {
+        title: "Competitive Compensation",
+        description: "Market-aligned salary with performance bonuses tied to project delivery and company growth.",
+      },
+      {
+        title: "Health & Wellness",
+        description: "Comprehensive health insurance and wellness support for you and your dependents.",
+      },
+      {
+        title: "Flexible Work",
+        description: "Hybrid arrangements and flexible scheduling where the role allows, with support for field and remote teams.",
+      },
+      {
+        title: "Learning & Growth",
+        description: "Annual training budget for certifications, conferences, and professional development in energy and technology.",
+      },
+      {
+        title: "Paid Time Off",
+        description: "Generous leave policy including annual leave, public holidays, and parental leave.",
+      },
+      {
+        title: "Mission-Driven Impact",
+        description: "Work on projects that directly power underserved communities and accelerate Africa's clean energy transition.",
+      },
+    ] as CareerBenefit[],
+    items: [
+      {
+        id: "senior-electrical-engineer",
+        title: "Senior Electrical Engineer",
+        department: "Engineering",
+        location: "Lagos, Nigeria",
+        type: "Full-time",
+        posted: "July 2026",
+        description: "Lead the design and commissioning of hybrid solar-diesel-battery mini-grids and commercial solar installations across West Africa.",
+        responsibilities: [
+          "Develop single-line diagrams, load analyses, and protection schemes for decentralized energy systems",
+          "Oversee EPC quality during construction and commissioning",
+          "Mentor junior engineers and support feasibility studies for new project pipelines",
+        ],
+        requirements: [
+          "B.Eng or M.Eng in Electrical Engineering (power systems focus)",
+          "5+ years in solar PV, mini-grid, or C&I energy project delivery",
+          "Proficiency with PVsyst, AutoCAD, or equivalent design tools",
+        ],
+        applicationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeYOOgc2RtxnZLPh8fqamHrO7tB1f6_ML8pjXMp2EcO4-0ICQ/viewform",
+      },
+      {
+        id: "mini-grid-operations-manager",
+        title: "Mini-Grid Operations Manager",
+        department: "Operations",
+        location: "Bayelsa State, Nigeria",
+        type: "Full-time",
+        posted: "July 2026",
+        description: "Manage day-to-day operations of active mini-grid sites, ensuring uptime, revenue collection, and community satisfaction.",
+        responsibilities: [
+          "Coordinate field technicians and remote monitoring for multiple mini-grid assets",
+          "Track KPIs including uptime, collections, and customer growth",
+          "Implement preventive maintenance schedules and incident response protocols",
+        ],
+        requirements: [
+          "3+ years in utility operations, mini-grid, or distributed energy management",
+          "Strong stakeholder management skills with rural communities",
+          "Experience with SCADA, IoT telemetry, or energy billing platforms",
+        ],
+        applicationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeYOOgc2RtxnZLPh8fqamHrO7tB1f6_ML8pjXMp2EcO4-0ICQ/viewform",
+      },
+      {
+        id: "full-stack-developer",
+        title: "Full Stack Developer (Energy Software)",
+        department: "Technology",
+        location: "Lagos, Nigeria (Hybrid)",
+        type: "Full-time",
+        posted: "June 2026",
+        description: "Build and scale AshGridX, AshAudit, and SureChargeX — the software layer powering Ashipa's intelligent energy ecosystem.",
+        responsibilities: [
+          "Develop features for grid monitoring, billing automation, and revenue auditing",
+          "Integrate IoT device data pipelines and payment gateways",
+          "Collaborate with product and field teams to ship reliable, field-tested software",
+        ],
+        requirements: [
+          "3+ years building production web applications (React/Next.js preferred)",
+          "Experience with APIs, databases, and cloud infrastructure",
+          "Interest in energy, fintech, or IoT domains is a strong plus",
+        ],
+        applicationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeYOOgc2RtxnZLPh8fqamHrO7tB1f6_ML8pjXMp2EcO4-0ICQ/viewform",
+      },
+      {
+        id: "project-development-associate",
+        title: "Project Development Associate",
+        department: "Business Development",
+        location: "Abuja, Nigeria",
+        type: "Full-time",
+        posted: "June 2026",
+        description: "Support the origination and financial modelling of new mini-grid and C&I solar projects across Nigeria.",
+        responsibilities: [
+          "Conduct site assessments and prepare pre-feasibility reports",
+          "Build financial models for PPAs, lease structures, and grant-funded projects",
+          "Coordinate with engineering and legal teams through project close",
+        ],
+        requirements: [
+          "Bachelor's degree in Engineering, Finance, or related field",
+          "1–3 years in renewable energy project development or consulting",
+          "Strong Excel/financial modelling skills and attention to detail",
+        ],
+        applicationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeYOOgc2RtxnZLPh8fqamHrO7tB1f6_ML8pjXMp2EcO4-0ICQ/viewform",
+      },
+    ] as JobPosting[],
+  },
   
   footer: {
     tagline: "Energizing Communities, Empowering People.",
@@ -310,16 +444,16 @@ export const siteData = {
     ],
     links: {
       company: [
-        { name: "About Us", href: "#about" },
-        { name: "Our Software", href: "#services" },
-        { name: "Impact Metrics", href: "#about" },
-        { name: "Careers", href: "#" },
+        { name: "About Us", href: "/#about" },
+        { name: "Our Software", href: "/#services" },
+        { name: "Impact Metrics", href: "/#about" },
+        { name: "Careers", href: "/careers" },
       ],
       services: [
-        { name: "Mini-Grid Operations", href: "#" },
-        { name: "Commercial & Industrial Solar", href: "#" },
-        { name: "Project Development & EPC", href: "#" },
-        { name: "Telemetry & IoT Audits", href: "#" },
+        { name: "Mini-Grid Operations", href: "/#projects" },
+        { name: "Commercial & Industrial Solar", href: "/#services" },
+        { name: "Project Development & EPC", href: "/#services" },
+        { name: "Telemetry & IoT Audits", href: "/#services" },
       ],
     },
   },
