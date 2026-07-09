@@ -1,65 +1,140 @@
-import Image from "next/image";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Offerings from "@/components/Offerings";
+import CaseStudy from "@/components/CaseStudy";
+import StatsBand from "@/components/StatsBand";
+import WhyDistributed from "@/components/WhyDistributed";
+import Projects from "@/components/Projects";
+import Industries from "@/components/Industries";
+import Testimonials from "@/components/Testimonials";
+import BlogPreview from "@/components/BlogPreview";
+import Newsletter from "@/components/Newsletter";
+import Footer from "@/components/Footer";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <Header />
+      <main className="flex-grow">
+        <Hero />
+        <Offerings />
+        <CaseStudy />
+        <StatsBand />
+        <WhyDistributed />
+        <Projects />
+        <Industries />
+        <Testimonials />
+        
+        {/* Contact Section */}
+        <section id="contact" className="py-24 bg-[#f6f5fa] border-t border-brand-teal-100/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* Left Column: Info */}
+              <div className="lg:col-span-5 space-y-8">
+                <div className="space-y-4">
+                  <span className="text-xs font-bold uppercase tracking-wider text-brand-teal-700 block">Contact Us</span>
+                  <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-brand-teal-950">
+                    Let&apos;s build the future of energy together.
+                  </h2>
+                  <p className="text-brand-teal-900/80 leading-relaxed text-sm sm:text-base">
+                    Whether you are looking to develop a community mini-grid, deploy commercial solar, or integrate our smart billing system, our engineers are ready to support you.
+                  </p>
+                </div>
+                
+                <div className="space-y-4 text-sm font-semibold text-brand-teal-950">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-gold-500 rounded-sm shadow-sm">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <a href="tel:+23418880192" className="hover:text-brand-teal-600 transition-colors">
+                      +234 1 888 0192
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-gold-500 rounded-sm shadow-sm">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <a href="mailto:info@ashipaelectric.com" className="hover:text-brand-teal-600 transition-colors">
+                      info@ashipaelectric.com
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-gold-500 rounded-sm shadow-sm">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <span>Victoria Island, Lagos, Nigeria</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Column: Contact Request Form */}
+              <div className="lg:col-span-7">
+                <form className="bg-white border border-brand-teal-100/40 p-8 sm:p-10 rounded-sm shadow-sm space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold uppercase tracking-wider text-brand-teal-950/70 block">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="John Doe"
+                        className="w-full bg-[#f6f5fa] border border-brand-teal-100/40 focus:border-brand-teal-600 outline-none rounded-sm px-4 py-3.5 text-sm text-brand-teal-950 transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold uppercase tracking-wider text-brand-teal-950/70 block">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="john@company.com"
+                        className="w-full bg-[#f6f5fa] border border-brand-teal-100/40 focus:border-brand-teal-600 outline-none rounded-sm px-4 py-3.5 text-sm text-brand-teal-950 transition-colors"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold uppercase tracking-wider text-brand-teal-950/70 block">
+                      Service Required
+                    </label>
+                    <select className="w-full bg-[#f6f5fa] border border-brand-teal-100/40 focus:border-brand-teal-600 outline-none rounded-sm px-4 py-3.5 text-sm text-brand-teal-950 transition-colors">
+                      <option>Commercial & Industrial Solar</option>
+                      <option>Mini-Grid Operations</option>
+                      <option>AshGridX / Software Ecosystem</option>
+                      <option>Consulting & Feasibility Studies</option>
+                    </select>
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold uppercase tracking-wider text-brand-teal-950/70 block">
+                      Message
+                    </label>
+                    <textarea
+                      rows={4}
+                      required
+                      placeholder="Describe your project size, location, and power needs..."
+                      className="w-full bg-[#f4f7f7] border border-brand-teal-100/40 focus:border-brand-gold-500 outline-none rounded-sm px-4 py-3.5 text-sm text-brand-teal-950 transition-colors resize-none"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-brand-teal-950 text-white font-bold py-3.5 rounded-sm hover:bg-brand-teal-900 transition-colors text-sm tracking-wide shadow-md cursor-pointer"
+                  >
+                    Submit Request
+                  </button>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <BlogPreview />
+        <Newsletter />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
