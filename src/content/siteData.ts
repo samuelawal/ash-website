@@ -112,7 +112,7 @@ export const siteData = {
         description: "Deploying intelligent, utility-grade mini-grid infrastructure to power off-grid communities, driving local entrepreneurship, agricultural value chains, and community resilience.",
         ctaText: "Explore Our Mini-Grids",
         ctaLink: "#projects",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2023/03/DJI_0888.00_10_10_15.Still010-scaled.jpg",
+        image: "/images/hero-minigrid-aerial.png",
       },
       {
         tagline: "COMMERCIAL & INDUSTRIAL SOLAR",
@@ -120,7 +120,7 @@ export const siteData = {
         description: "Custom solar PV and lithium battery storage systems that eliminate power outages, lower operating costs by up to 50%, and shrink carbon footprints for African enterprise.",
         ctaText: "See C&I Solutions",
         ctaLink: "#services",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/3.png",
+        image: "/images/team-technicians-solar.png",
       },
       {
         tagline: "SMART ENERGY TOOLS (SOFTWARE)",
@@ -128,7 +128,7 @@ export const siteData = {
         description: "Introducing AshGridX, AshAudit, and SureChargeX — our integrated energy operating system designed for utilities to optimize efficiency, automate billing, and provide live auditing.",
         ctaText: "Discover Software Suite",
         ctaLink: "#services",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/4.png",
+        image: "/images/hero-community-powered.png",
       },
     ] as HeroSlide[],
   },
@@ -171,7 +171,7 @@ export const siteData = {
     author: "Mr. Kelvin Busolo",
     role: "Head Grower",
     company: "Dobi AgriCo Limited",
-    image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/Mr-Kelvin-Busolo-Head-Grower-Dobi-AgriCo-Limited.jpg",
+    image: "/images/case-kelvin-busolo.jpg",
     metrics: [
       { value: "333.55 MT", label: "CO₂ Emissions Reduced" },
       { value: "90 MT+", label: "Coal Equivalent Saved" },
@@ -181,7 +181,7 @@ export const siteData = {
   } as CaseStudy,
 
   statsBand: {
-    bgImage: "https://wp.ashipaelectric.com/wp-content/uploads/2023/03/DJI_0888.00_02_12_11.Still002-scaled-e1778771012867.jpg",
+    bgImage: "/images/stats-team-site.png",
     items: [
       { value: 1.8, suffix: " MWp", text: "Total Installed Solar PV Capacity" },
       { value: 12, suffix: " +", text: "Active Communities & C&I Sites Served" },
@@ -193,8 +193,8 @@ export const siteData = {
   whyDistributed: {
     title: "Why Distributed Energy?",
     subtitle: "Centralized grids are failing to power Africa's growth. The future is localized, digitized, and clean.",
-    featureImage: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/N8A2657-scaled.jpg",
-    videoUrl: "https://www.youtube.com/embed/SZEflIVnhH8",
+    featureImage: "/images/community-ashipa-worker.png",
+    videoUrl: "https://www.youtube.com/embed/M_axidrLdhA",
     blocks: [
       {
         title: "Our Mission",
@@ -216,34 +216,34 @@ export const siteData = {
         capacity: "67.5 kWp Solar + Lithium Storage",
         location: "Bayelsa State, Nigeria",
         tag: "Mini-Grid",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/Aguobiri-Minigrid-Project.png",
+        image: "/images/project-aguobiri.png",
       },
       {
         title: "Kaida Tsoho Mini-Grid Project",
         capacity: "32.4 kWp Solar + Hybrid Storage",
         location: "Federal Capital Territory, Nigeria",
         tag: "Mini-Grid",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/Kaida-Tsoho-Minigrid-Project.png",
+        image: "/images/project-kaida-tsoho.png",
       },
       {
         title: "Korokorosei Mini-Grid Project",
         capacity: "115.2 kWp Solar + Utility Storage",
         location: "Bayelsa State, Nigeria",
         tag: "Mini-Grid",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/Korokorosei-Minigrid-Project.png",
+        image: "/images/project-korokorosei.png",
       },
       {
         title: "NICON Estate Solar Project",
         capacity: "150 kWp Commercial Solar PV",
         location: "Lekki, Lagos, Nigeria",
         tag: "Commercial & Industrial",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/NICON-Estate-Solar-Project.png",
+        image: "/images/project-nicon.png",
       },
     ] as ProjectItem[],
   },
 
   industries: {
-    bgImage: "https://wp.ashipaelectric.com/wp-content/uploads/2026/05/N8A2740-Copy-scaled.jpg",
+    bgImage: "/images/industries-agro-processing.png",
     title: "Industries We Serve",
     subtitle: "Tailored energy solutions engineered for the specific demands of high-growth sectors.",
     list: [
@@ -264,19 +264,19 @@ export const siteData = {
         name: "Mary",
         role: "Community Shop Owner",
         quote: "With 24/7 power from Ashipa's mini-grid, my refrigeration shop can finally run reliably. I've doubled my daily sales and no longer rely on loud, expensive diesel generators that eat into all my profits.",
-        avatar: "https://wp.ashipaelectric.com/wp-content/uploads/2023/04/Ash-T-Mary.jpg",
+        avatar: "/images/avatar-mary.jpg",
       },
       {
         name: "Funmilayo",
         role: "Head Nurse, Local Clinic",
         quote: "Having stable energy is a matter of life and death. Vaccines are kept cold, and deliveries or emergency treatments can go on safely at night. Ashipa Electric has transformed our clinic.",
-        avatar: "https://wp.ashipaelectric.com/wp-content/uploads/2023/04/Ash-T-Funmilayo.jpg",
+        avatar: "/images/avatar-funmilayo.jpg",
       },
       {
         name: "Ezekiel",
         role: "Agro-Processor Enterprise Owner",
         quote: "Our agricultural processing machines now run non-stop. The cost of solar power is fixed and highly predictable, which allowed us to double our production capacity and hire five more people.",
-        avatar: "https://wp.ashipaelectric.com/wp-content/uploads/2023/04/Ash-T-Ezekiel.jpg",
+        avatar: "/images/avatar-ezekiel.jpg",
       },
     ] as TestimonialItem[],
   },
@@ -287,7 +287,7 @@ export const siteData = {
     items: [
       {
         title: "Partnering with WeCyclers for Circular Energy Solutions",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2025/03/IMG-20250123-WA0022.jpg",
+        image: "/images/blog-wecyclers.jpg",
         author: "Ashipa Communications",
         date: "June 15, 2026",
         category: "Partnership",
@@ -295,7 +295,7 @@ export const siteData = {
       },
       {
         title: "Unlocking Carbon Credits for Mini-Grid Developers in West Africa",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2024/03/blog-5.jpg",
+        image: "/images/blog-minigrid-aerial.png",
         author: "Investment Team",
         date: "May 2, 2026",
         category: "Finance",
@@ -303,7 +303,7 @@ export const siteData = {
       },
       {
         title: "Financial Auditing for Decentralized Utilities: Introducing AshAudit",
-        image: "https://wp.ashipaelectric.com/wp-content/uploads/2024/03/blog-6.jpg",
+        image: "/images/team-meeting-solar.png",
         author: "Software Dev Division",
         date: "March 18, 2026",
         category: "Software",
@@ -469,7 +469,7 @@ export const siteData = {
     socials: [
       { name: "LinkedIn", href: "#" },
       { name: "Twitter", href: "#" },
-      { name: "YouTube", href: "#" },
+      { name: "YouTube", href: "https://www.youtube.com/@ashipaelectric391" },
       { name: "Facebook", href: "#" },
     ],
     links: {

@@ -43,6 +43,9 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
+                  {...(social.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   className="p-2.5 bg-white/5 hover:bg-brand-gold-500 text-white/60 hover:text-white border border-white/10 hover:border-brand-gold-500 rounded-sm transition-all duration-300 active:scale-95"
                   aria-label={`Follow us on ${social.name}`}
                 >
