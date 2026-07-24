@@ -6,6 +6,24 @@ import { Play, Shield, Target, Compass } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/content/siteData";
 
+// YouTube share/watch URLs (youtu.be/ID, youtube.com/watch?v=ID) refuse to be
+// iframed. Convert to the embeddable /embed/ID form so the player loads.
+function toYouTubeEmbedUrl(url: string) {
+  try {
+    const u = new URL(url);
+    let id = "";
+    if (u.hostname === "youtu.be") {
+      id = u.pathname.slice(1);
+    } else if (u.hostname.endsWith("youtube.com")) {
+      id = u.searchParams.get("v") ?? u.pathname.replace("/embed/", "");
+    }
+    if (!id) return url;
+    return `https://www.youtube.com/embed/${id}?autoplay=1`;
+  } catch {
+    return url;
+  }
+}
+
 export default function WhyDistributed() {
   const [isPlaying, setIsPlaying] = useState(false);
   const data = siteData.whyDistributed;
@@ -128,7 +146,7 @@ export default function WhyDistributed() {
                     className="absolute inset-0 w-full h-full"
                   >
                     <iframe
-                      src={data.videoUrl}
+                      src={toYouTubeEmbedUrl(data.videoUrl)}
                       title="Ashipa Electric Project Video"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -91,12 +91,12 @@ export const siteData = {
       { name: "Services", href: "/#services" },
       { name: "Projects", href: "/#projects" },
       { name: "Updates", href: "/#updates" },
-      { name: "Careers", href: "/#careers" },
+      { name: "Careers", href: "/careers" },
       { name: "Contact", href: "/contact" },
     ],
     contactInfo: {
       phones: ["+1 205 202 9490", "+234 703 992 9954"],
-      email: "info@ashipaelectric.com",
+      email: "careers@ashipaelectric.com",
     },
     cta: {
       text: "Get in Touch",
@@ -203,7 +203,7 @@ export const siteData = {
     title: "Why Distributed Energy?",
     subtitle: "Centralized grids are failing to power Africa's growth. The future is localized, digitized, and clean.",
     featureImage: "/images/community-ashipa-worker.png",
-    videoUrl: "https://www.youtube.com/embed/M_axidrLdhA",
+    videoUrl: "https://youtu.be/YtZIEMJzYts?si=BRqDXRQAR5m1Xp0w",
     blocks: [
       {
         title: "Our Mission",
@@ -510,10 +510,12 @@ export const siteData = {
   footer: {
     tagline: "Energizing Communities, Empowering People",
     socials: [
-      { name: "LinkedIn", href: "#" },
-      { name: "Twitter", href: "#" },
+      { name: "LinkedIn", href: "https://www.linkedin.com/company/67755970/" },
+      { name: "Twitter", href: "https://x.com/AshipaElectric" },
+      { name: "Facebook", href: "https://web.facebook.com/AshipaElectric/" },
+      { name: "Instagram", href: "https://www.instagram.com/p/Da5Hh3ThYe4/" },
+      { name: "TikTok", href: "https://www.tiktok.com/@ashipaelectric" },
       { name: "YouTube", href: "https://www.youtube.com/@ashipaelectric391" },
-      { name: "Facebook", href: "#" },
     ],
     links: {
       company: [

@@ -6,46 +6,64 @@ import { useInView, animate } from "framer-motion";
 import { motion } from "framer-motion";
 import { siteData } from "@/content/siteData";
 
+function formatStatValue(value: number) {
+  return Number.isInteger(value)
+    ? value.toLocaleString()
+    : value.toLocaleString(undefined, { maximumFractionDigits: 1 });
+}
+
 interface CounterProps {
   value: number;
+  active: boolean;
   duration?: number;
 }
 
-function Counter({ value, duration = 2.5 }: CounterProps) {
+function Counter({ value, active, duration = 2.5 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    if (isInView) {
-      const node = ref.current;
-      if (!node) return;
+    const node = ref.current;
+    if (!node || !active) return;
 
-      const controls = animate(0, value, {
-        duration,
-        ease: "easeOut",
-        onUpdate(current) {
-          if (value % 1 !== 0) {
-            // Decimal formatting (e.g. 1.8)
-            node.textContent = current.toFixed(1);
-          } else {
-            // Integer formatting with comma separator
-            node.textContent = Math.round(current).toLocaleString();
-          }
-        },
-      });
-
-      return () => controls.stop();
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      node.textContent = formatStatValue(value);
+      return;
     }
-  }, [isInView, value, duration]);
 
-  return <span ref={ref} className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-gold-500">0</span>;
+    const controls = animate(0, value, {
+      duration,
+      ease: "easeOut",
+      onUpdate(current) {
+        node.textContent = Number.isInteger(value)
+          ? Math.round(current).toLocaleString()
+          : current.toLocaleString(undefined, { maximumFractionDigits: 1 });
+      },
+    });
+
+    return () => controls.stop();
+  }, [active, value, duration]);
+
+  return (
+    <span
+      ref={ref}
+      className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-gold-500"
+    >
+      0
+    </span>
+  );
 }
 
 export default function StatsBand() {
   const data = siteData.statsBand;
+  const sectionRef = useRef<HTMLElement>(null);
+  const countersActive = useInView(sectionRef, { once: true, amount: 0.25 });
 
   return (
-    <section className="relative py-28 overflow-hidden bg-brand-teal-950 text-white select-none">
+    <section
+      ref={sectionRef}
+      className="relative py-28 overflow-hidden bg-brand-teal-950 text-white select-none"
+    >
       {/* Background image with high contrast dark overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -72,7 +90,7 @@ export default function StatsBand() {
             >
               {/* Animated Stat Value */}
               <div className="flex items-baseline justify-center">
-                <Counter value={item.value} />
+                <Counter value={item.value} active={countersActive} />
                 <span className="font-display font-extrabold text-3xl sm:text-4xl text-brand-gold-500">
                   {item.suffix}
                 </span>
