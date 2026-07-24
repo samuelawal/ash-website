@@ -193,9 +193,9 @@ export const siteData = {
     bgImage: "/images/stats-team-site.png",
     items: [
       { value: 479.4, suffix: " kWp", text: "Total Installed Solar PV Capacity" },
-      { value: 6, suffix: "", text: "Active Plants Across Nigeria" },
+      { value: 120, suffix: "+", text: "Communities Served + Pipeline" },
       { value: 1585.5, suffix: " MT", text: "Displaced CO₂e" },
-      { value: 4, suffix: "", text: "Bayelsa Community Mini-Grids" },
+      { value: 3, suffix: "", text: "Winning Awards" },
     ] as StatItem[],
   },
 
@@ -232,7 +232,7 @@ export const siteData = {
         capacity: "100 kWp Solar + Hybrid Storage",
         location: "Federal Capital Territory, Nigeria",
         tag: "Mini-Grid",
-        image: "/images/project-kaida-aerial.jpg",
+        image: "/images/project-kaida-tsoho-aerial.jpg",
       },
       {
         title: "Korokorosei Mini-Grid Project",
@@ -346,7 +346,7 @@ export const siteData = {
       },
       {
         title: "Flexible Work",
-        description: "Hybrid arrangements and field support where the role allows, across Abuja, Lagos, and Bayelsa.",
+        description: "Hybrid arrangements and field support where the role allows, across all Nations.",
       },
     ],
   },
