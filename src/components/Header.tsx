@@ -8,6 +8,10 @@ import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/content/siteData";
 
+function phoneHref(phone: string) {
+  return `tel:${phone.replace(/\s/g, "")}`;
+}
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,10 +33,12 @@ export default function Header() {
       <div className={`bg-brand-teal-950/40 text-brand-teal-100/80 border-b border-brand-teal-900/30 text-xs px-4 transition-all duration-300 ease-in-out ${useSolidHeader && isScrolled ? "max-h-0 py-0 overflow-hidden border-b-0" : "max-h-12 py-2.5 overflow-hidden"}`}>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 hover:text-brand-gold-400 transition-colors">
-              <Phone className="w-3.5 h-3.5" />
-              <a href={`tel:${siteData.navigation.contactInfo.phone}`}>{siteData.navigation.contactInfo.phone}</a>
-            </span>
+            {siteData.navigation.contactInfo.phones.map((phone) => (
+              <span key={phone} className="flex items-center gap-1.5 hover:text-brand-gold-400 transition-colors">
+                <Phone className="w-3.5 h-3.5" />
+                <a href={phoneHref(phone)}>{phone}</a>
+              </span>
+            ))}
             <span className="flex items-center gap-1.5 hover:text-brand-gold-400 transition-colors">
               <Mail className="w-3.5 h-3.5" />
               <a href={`mailto:${siteData.navigation.contactInfo.email}`}>{siteData.navigation.contactInfo.email}</a>
@@ -40,7 +46,7 @@ export default function Header() {
           </div>
           <div className="hidden md:flex items-center gap-2 text-brand-teal-200">
             <span className="inline-block w-2 h-2 rounded-full bg-brand-gold-500 animate-pulse"></span>
-            <span>Energizing Communities across West Africa</span>
+            <span>{siteData.footer.tagline}</span>
           </div>
         </div>
       </div>
@@ -127,11 +133,13 @@ export default function Header() {
               </div>
 
               {/* Mobile Contact Info */}
-              <div className="flex flex-col gap-3 text-sm text-brand-teal-200/90 py-2">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-brand-gold-500" />
-                  <a href={`tel:${siteData.navigation.contactInfo.phone}`}>{siteData.navigation.contactInfo.phone}</a>
-                </div>
+              <div className="flex flex-col gap-2 text-sm text-brand-teal-200/90 py-2">
+                {siteData.navigation.contactInfo.phones.map((phone) => (
+                  <div key={phone} className="flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-brand-gold-500" />
+                    <a href={phoneHref(phone)}>{phone}</a>
+                  </div>
+                ))}
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-brand-gold-500" />
                   <a href={`mailto:${siteData.navigation.contactInfo.email}`}>{siteData.navigation.contactInfo.email}</a>

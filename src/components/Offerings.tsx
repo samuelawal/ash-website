@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Zap, Settings, Activity, ClipboardCopy } from "lucide-react";
+import { ArrowUpRight, Zap, Activity, ClipboardCopy } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/content/siteData";
 
 const iconMap = [
   <Zap key="zap" className="w-6 h-6 text-brand-gold-500" />,
   <ClipboardCopy key="clipboard" className="w-6 h-6 text-brand-gold-500" />,
-  <Settings key="settings" className="w-6 h-6 text-brand-gold-500" />,
   <Activity key="activity" className="w-6 h-6 text-brand-gold-500" />,
 ];
 
@@ -97,13 +96,13 @@ export default function Offerings() {
               </div>
 
               {/* Bottom CTA */}
-              <Link
+              {/* <Link
                 href={item.link}
                 className="text-xs font-bold uppercase tracking-wider text-brand-teal-700 group-hover:text-brand-gold-600 transition-colors flex items-center gap-1"
               >
                 Learn More
                 <span className="block transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
-              </Link>
+              </Link> */}
             </motion.div>
           ))}
         </div>

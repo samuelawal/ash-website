@@ -91,17 +91,32 @@ export const siteData = {
       { name: "Services", href: "/#services" },
       { name: "Projects", href: "/#projects" },
       { name: "Updates", href: "/#updates" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/#contact" },
+      { name: "Careers", href: "/#careers" },
+      { name: "Contact", href: "/contact" },
     ],
     contactInfo: {
-      phone: "+234 1 888 0192",
+      phones: ["+1 205 202 9490", "+234 703 992 9954"],
       email: "info@ashipaelectric.com",
     },
     cta: {
       text: "Get in Touch",
-      href: "/#contact",
+      href: "/contact",
     },
+  },
+
+  contact: {
+    title: "Let's build the future of energy together.",
+    description:
+      "Whether you are looking to develop a community mini-grid, deploy commercial solar, or need engineering and operations support, our team is ready to help.",
+    phones: ["+1 205 202 9490", "+234 703 992 9954"],
+    email: "info@ashipaelectric.com",
+    address: "Victoria Island, Lagos, Nigeria",
+    serviceOptions: [
+      "Commercial & Industrial Solar",
+      "Mini-Grid Operations",
+      "Energy Monitoring & Operations",
+      "Consulting & Feasibility Studies",
+    ],
   },
 
   hero: {
@@ -123,10 +138,10 @@ export const siteData = {
         image: "/images/team-technicians-solar.png",
       },
       {
-        tagline: "SMART ENERGY TOOLS (SOFTWARE)",
-        title: "Monitor. Audit. Charge. One Ecosystem.",
-        description: "Introducing AshGridX, AshAudit, and SureChargeX — our integrated energy operating system designed for utilities to optimize efficiency, automate billing, and provide live auditing.",
-        ctaText: "Discover Software Suite",
+        tagline: "DIGITIZED UTILITY OPERATIONS",
+        title: "Reliable Power, Fully Managed",
+        description: "Integrated monitoring, billing, and operations support designed for decentralized utilities to optimize efficiency, protect revenue, and serve communities reliably.",
+        ctaText: "Explore Our Services",
         ctaLink: "#services",
         image: "/images/hero-community-powered.png",
       },
@@ -141,25 +156,19 @@ export const siteData = {
         title: "Energy Projects",
         description: "End-to-end development of decentralized clean energy systems including hybrid solar-diesel-battery mini-grids and commercial rooftop solar installations.",
         details: ["Engineering, Procurement & Construction (EPC)", "Power Purchase Agreements (PPAs)", "Asset Management & Operations (O&M)"],
-        link: "#contact",
+        link: "/contact",
       },
       {
         title: "Consulting Services",
         description: "Expert engineering design, feasibility studies, project advisory, and environmental impact assessments for complex decentralized utility projects.",
         details: ["Project Feasibility & Modelling", "Technical Audits & Optimization", "Regulatory & Policy Advisory"],
-        link: "#contact",
-      },
-      {
-        title: "Software Suite",
-        description: "AshGridX (smart grid management), AshAudit (live financial & power auditing), and SureChargeX (automated micro-billing) form our custom energy software layer.",
-        details: ["AshGridX: Smart grid operations", "AshAudit: Real-time billing & revenue audits", "SureChargeX: Mobile-integrated smart payments"],
-        link: "#services",
+        link: "/contact",
       },
       {
         title: "Energy Monitoring",
         description: "Deploying high-precision IoT telemetry and remote monitoring systems to deliver live data analytics, uptime reporting, and proactive maintenance.",
         details: ["24/7 Remote Operations Center", "Predictive Failure Detection", "Yield & Degradation Analytics"],
-        link: "#services",
+        link: "/#services",
       },
     ] as Offering[],
   },
@@ -223,7 +232,7 @@ export const siteData = {
         capacity: "100 kWp Solar + Hybrid Storage",
         location: "Federal Capital Territory, Nigeria",
         tag: "Mini-Grid",
-        image: "/images/project-kaida-tsoho.png",
+        image: "/images/project-kaida-aerial.jpg",
       },
       {
         title: "Korokorosei Mini-Grid Project",
@@ -237,7 +246,7 @@ export const siteData = {
         capacity: "95.4 kWp Commercial Solar PV",
         location: "Nigeria",
         tag: "Commercial & Industrial",
-        image: "/images/project-dobi-sign.png",
+        image: "/images/project-dobi-farm.png",
       },
     ] as ProjectItem[],
   },
@@ -283,7 +292,7 @@ export const siteData = {
 
   blog: {
     title: "Company Insights & Updates",
-    subtitle: "Stay updated on the latest trends in renewable energy financing, software innovation, and mini-grid deployment in Africa.",
+    subtitle: "Stay updated on the latest trends in renewable energy financing, operations innovation, and mini-grid deployment in Africa.",
     items: [
       {
         title: "Partnering with WeCyclers for Circular Energy Solutions",
@@ -302,12 +311,12 @@ export const siteData = {
         excerpt: "An in-depth look at how digital utilities can leverage decentralized power assets to generate and sell carbon offsets.",
       },
       {
-        title: "Financial Auditing for Decentralized Utilities: Introducing AshAudit",
+        title: "Building Revenue Assurance for Decentralized Utilities",
         image: "/images/team-meeting-solar.png",
-        author: "Software Dev Division",
+        author: "Operations Team",
         date: "March 18, 2026",
-        category: "Software",
-        excerpt: "How Ashipa's new software engine delivers unparalleled transparency and real-time revenue audits for energy operators.",
+        category: "Operations",
+        excerpt: "How transparent metering and live operational data help mini-grid developers protect revenue and serve communities reliably.",
       },
     ] as BlogPostItem[],
   },
@@ -319,10 +328,33 @@ export const siteData = {
     cta: "Subscribe Now",
   },
 
+  careersPreview: {
+    eyebrow: "Join Our Team",
+    title: "Contribute to Our Mission",
+    subtitle:
+      "Help us deploy intelligent decentralized energy infrastructure that powers underserved communities and accelerates Africa's clean energy transition.",
+    ctaText: "View Open Roles",
+    ctaLink: "/careers",
+    highlights: [
+      {
+        title: "Mission-Driven Impact",
+        description: "Work on projects that directly energize communities and enable local economic growth.",
+      },
+      {
+        title: "Learning & Growth",
+        description: "Training budget for certifications, conferences, and professional development in energy and technology.",
+      },
+      {
+        title: "Flexible Work",
+        description: "Hybrid arrangements and field support where the role allows, across Abuja, Lagos, and Bayelsa.",
+      },
+    ],
+  },
+
   careers: {
     title: "Build Africa's Energy Future",
     subtitle: "Join a team of engineers, operators, and innovators deploying intelligent decentralized energy infrastructure across the continent.",
-    intro: "We're looking for people who want to solve hard problems at the intersection of clean energy, software, and community impact. Each role below links to a dedicated application form.",
+    intro: "We're looking for people who want to solve hard problems at the intersection of clean energy, operations, and community impact. Each role below links to a dedicated application form.",
     applicationFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeYOOgc2RtxnZLPh8fqamHrO7tB1f6_ML8pjXMp2EcO4-0ICQ/viewform",
     benefits: [
       {
@@ -358,7 +390,7 @@ export const siteData = {
         location: "Abuja / Lagos, Nigeria",
         type: "Full-time",
         posted: "July 2026",
-        description: "Lead capital-raising activities, manage investor relationships, secure grants and financing facilities, and structure project finance transactions to support Ashipa Electric's growth across mini-grids, C&I, and energy software.",
+        description: "Lead capital-raising activities, manage investor relationships, secure grants and financing facilities, and structure project finance transactions to support Ashipa Electric's growth across mini-grids and C&I solar.",
         responsibilities: [
           "Develop and execute fundraising strategies across equity, debt, grant, and blended finance instruments",
           "Build and sustain relationships with DFIs, private equity, commercial lenders, and grant providers",
@@ -380,7 +412,7 @@ export const siteData = {
         location: "Abuja / Lagos, Nigeria",
         type: "Full-time",
         posted: "July 2026",
-        description: "Own the full product lifecycle across Ashipa Electric's energy software portfolio — Energy Management, metering, token vending, EV Charging, and Load Audit — bridging technical complexity and business strategy.",
+        description: "Own the full product lifecycle across Ashipa Electric's digital utility platforms — spanning energy management, metering, token vending, EV charging, and load audit — bridging technical complexity and business strategy.",
         responsibilities: [
           "Define and communicate a 12-to-36-month unified product roadmap across Energy Management, EV Charging, Metering, and Load Audit platforms",
           "Own end-to-end product delivery from ideation through design, build, testing, and launch",
@@ -391,7 +423,7 @@ export const siteData = {
           "6+ years in Product Management with technical software products integrated with hardware or complex data systems",
           "Proven ability to manage complex timelines, mitigate risks, and lead resource planning across concurrent workstreams",
           "Ability to partner with Engineering on API design and data architecture while building business cases and ROI analyses",
-          "Interest or experience in EV infrastructure, metering, DERMS, or related energy software domains is advantageous",
+          "Interest or experience in EV infrastructure, metering, DERMS, or related digital utility domains is advantageous",
         ],
         applicationUrl: "https://forms.gle/nWsKt6x2abGWdfGm9",
       },
@@ -440,32 +472,43 @@ export const siteData = {
         applicationUrl: "https://forms.gle/sPvTY9BHfehHExi87",
       },
       {
-        id: "hse-officer",
-        title: "Health, Safety & Environment (HSE) Officer",
-        department: "Technical Operations",
-        location: "Nigeria",
+        id: "ehs-officer",
+        title: "Environmental, Health & Social (EHS) Officer",
+        department: "Operations",
+        location: "Project sites / Mini-grid communities (travel across operating regions)",
         type: "Full-time",
         posted: "July 2026",
-        description: "Drive health, safety, and environmental compliance across operations — ensuring a safe working environment for staff, contractors, and host communities while supporting regulatory compliance and continuous improvement.",
+        description:
+          "Support the implementation and day-to-day operation of Ashipa Electric's Environmental and Social Management System (ESMS) across mini-grid projects. Ensure compliance with the company's E&S Policy, national regulations, and lender/investor standards throughout site selection, design, construction, and operation — identifying, avoiding, and managing environmental and social risks while maintaining transparent relationships with host communities. Reports to the Technical Operations Manager.",
         responsibilities: [
-          "Implement and monitor HSE policies, procedures, and standards across all sites",
-          "Conduct risk assessments, safety inspections, and audits; investigate incidents and recommend corrective actions",
-          "Deliver HSE inductions, trainings, and toolbox talks; monitor contractor HSE compliance",
-          "Prepare regular HSE reports and performance metrics; promote environmental sustainability and safe work practices",
+          "Maintain and update the company ESMS manual, legal register, training matrix, and E&S documentation; ensure all projects follow ESMS procedures and drive continual improvement",
+          "Track E&S KPIs and present monthly E&S performance dashboards to management",
+          "Screen candidate sites against the Exclusion List, complete Initial E&S Screening Checklists, and categorize sites as Category I (High-Risk) or Category II (Low-Risk)",
+          "Apply VLD Guidelines for land donations and support fair, transparent land acquisition",
+          "Coordinate required studies by category: ESIA, ESMP, RAP and/or LRP for Category I; ESMP for Category II",
+          "Develop and implement Stakeholder Engagement Plans and Grievance Redress Mechanisms (GRM) for all projects",
+          "Ensure E&S risks for gender, vulnerable groups, and SEA/GBV are identified and mitigated",
+          "Track and secure environmental/social clearances and permits from REA, NESREA, and state MDAs before construction",
+          "Maintain GRM register; ensure grievances are logged, investigated, and closed within agreed timelines",
+          "Support monthly community engagement and feedback sessions; promote gender inclusion and protection of vulnerable persons",
+          "Prepare periodic E&S and HSE compliance reports for REA, lenders, investors, and internal management",
+          "Maintain records of trainings, audits, inspections, permits, and non-conformances",
         ],
         requirements: [
-          "Bachelor's degree in Engineering, Environmental Science, or related field",
-          "2–4 years of HSE experience (energy, construction, or engineering preferred)",
-          "Relevant certifications (NEBOSH, IOSH) are an added advantage",
-          "Strong knowledge of HSE regulations and ability to work across multiple project sites",
+          "Bachelor's degree in Environmental Science, Environmental Management, Social Science, Occupational Health & Safety, Engineering, or related field",
+          "2–4 years' experience in EHS or community relations roles, ideally in energy or infrastructure",
+          "Familiarity with lender E&S standards (e.g., IFC Performance Standards) and national regulations is an advantage",
+          "Strong grasp of E&S risk management, stakeholder engagement, and grievance handling",
+          "Good report-writing, record-keeping, and independent field-based work skills; willingness to travel to remote sites",
+          "Frequent travel to mini-grid project sites, including rural communities; close coordination with contractors, communities, regulators (REA), and lenders/investors",
         ],
-        applicationUrl: "mailto:careers@ashipaelectric.com?subject=Application%20-%20HSE%20Officer",
+        applicationUrl: "https://forms.gle/YRukTRWXRYcTKLp89",
       },
     ] as JobPosting[],
   },
   
   footer: {
-    tagline: "Energizing Communities, Empowering People.",
+    tagline: "Energizing Communities, Empowering People",
     socials: [
       { name: "LinkedIn", href: "#" },
       { name: "Twitter", href: "#" },
@@ -475,9 +518,9 @@ export const siteData = {
     links: {
       company: [
         { name: "About Us", href: "/#about" },
-        { name: "Our Software", href: "/#services" },
+        { name: "Our Services", href: "/#services" },
         { name: "Impact Metrics", href: "/#about" },
-        { name: "Careers", href: "/careers" },
+        { name: "Careers", href: "/#careers" },
       ],
       services: [
         { name: "Mini-Grid Operations", href: "/#projects" },

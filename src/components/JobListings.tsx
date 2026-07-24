@@ -177,7 +177,7 @@ export default function JobListings() {
         >
           <h3 className="text-lg font-bold font-display mb-2">Don&apos;t see the right role?</h3>
           <p className="text-brand-teal-100/80 text-sm leading-relaxed mb-4 max-w-2xl">
-            We&apos;re always interested in hearing from talented people in engineering, operations, and energy software.
+            We&apos;re always interested in hearing from talented people in engineering, operations, and energy infrastructure.
             Send your CV and a short note about what you&apos;d like to work on.
           </p>
           <a
