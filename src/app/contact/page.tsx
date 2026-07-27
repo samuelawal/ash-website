@@ -6,7 +6,7 @@ import ContactSection from "@/components/ContactSection";
 export const metadata: Metadata = {
   title: "Contact Us | Ashipa Electric",
   description:
-    "Get in touch with Ashipa Electric for mini-grid development, commercial solar, consulting, and energy monitoring across Nigeria.",
+    "Get in touch with Ashipa Electric for distributed energy and utility-scale development, commercial solar, consulting, and energy monitoring across Nigeria.",
 };
 
 export default function ContactPage() {

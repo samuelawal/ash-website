@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Offerings from "@/components/Offerings";
+import WhereWeBuild from "@/components/WhereWeBuild";
 import CaseStudy from "@/components/CaseStudy";
 import StatsBand from "@/components/StatsBand";
 import WhyDistributed from "@/components/WhyDistributed";
@@ -19,6 +20,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Offerings />
+        <WhereWeBuild />
         <CaseStudy />
         <StatsBand />
         <WhyDistributed />

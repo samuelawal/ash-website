@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Zap, Activity, ClipboardCopy } from "lucide-react";
+import { ArrowUpRight, Zap, Activity, ClipboardCopy, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/content/siteData";
 
 const iconMap = [
-  <Zap key="zap" className="w-6 h-6 text-brand-gold-500" />,
-  <ClipboardCopy key="clipboard" className="w-6 h-6 text-brand-gold-500" />,
-  <Activity key="activity" className="w-6 h-6 text-brand-gold-500" />,
+  <Zap key="zap" className="w-6 h-6 text-brand-green-500" />,
+  <ClipboardCopy key="clipboard" className="w-6 h-6 text-brand-green-500" />,
+  <Activity key="activity" className="w-6 h-6 text-brand-green-500" />,
+  <Building2 key="building" className="w-6 h-6 text-brand-green-500" />,
 ];
 
 export default function Offerings() {
@@ -69,7 +70,7 @@ export default function Offerings() {
                   </div>
                   <Link
                     href={item.link}
-                    className="p-2 text-brand-teal-700 hover:text-brand-gold-500 rounded-full hover:bg-brand-teal-100/40 transition-all opacity-40 group-hover:opacity-100 duration-200"
+                    className="p-2 text-brand-teal-700 hover:text-brand-green-500 rounded-full hover:bg-brand-teal-100/40 transition-all opacity-40 group-hover:opacity-100 duration-200"
                     aria-label={`Read more about ${item.title}`}
                   >
                     <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -88,7 +89,7 @@ export default function Offerings() {
                 <ul className="space-y-2 border-t border-brand-teal-100/30 pt-5 mb-8">
                   {item.details.map((detail) => (
                     <li key={detail} className="flex items-center gap-2 text-xs text-brand-teal-950 font-medium">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold-500 shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-green-500 shrink-0"></span>
                       {detail}
                     </li>
                   ))}
@@ -98,7 +99,7 @@ export default function Offerings() {
               {/* Bottom CTA */}
               {/* <Link
                 href={item.link}
-                className="text-xs font-bold uppercase tracking-wider text-brand-teal-700 group-hover:text-brand-gold-600 transition-colors flex items-center gap-1"
+                className="text-xs font-bold uppercase tracking-wider text-brand-teal-700 group-hover:text-brand-green-600 transition-colors flex items-center gap-1"
               >
                 Learn More
                 <span className="block transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>

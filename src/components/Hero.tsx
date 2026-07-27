@@ -58,12 +58,13 @@ export default function Hero() {
               alt={slides[currentSlide].title}
               fill
               className="object-cover object-center"
-              priority
+              sizes="100vw"
+              preload={currentSlide === 0}
               quality={85}
             />
             {/* Soft gradient overlay for maximum contrast and high-end aesthetic */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-teal-950 via-brand-teal-950/70 to-transparent opacity-90"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-teal-950/80 via-transparent to-brand-teal-950/20"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-brand-teal-950 via-brand-teal-950/70 to-transparent opacity-90"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-brand-teal-950/80 via-transparent to-brand-teal-950/20"></div>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -81,7 +82,7 @@ export default function Hero() {
               className="space-y-6"
             >
               {/* Tagline */}
-              <span className="inline-block text-xs sm:text-sm font-semibold tracking-widest text-brand-gold-400 bg-brand-gold-500/10 border border-brand-gold-500/20 px-3 py-1.5 rounded-sm">
+              <span className="inline-block text-xs sm:text-sm font-semibold tracking-widest text-brand-green-400 bg-brand-green-500/10 border border-brand-green-500/20 px-3 py-1.5 rounded-sm">
                 {slides[currentSlide].tagline}
               </span>
 
@@ -99,7 +100,7 @@ export default function Hero() {
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   href={slides[currentSlide].ctaLink}
-                  className="group inline-flex items-center gap-2 bg-brand-gold-500 text-brand-teal-950 font-bold px-6 py-3.5 rounded-sm hover:bg-brand-gold-400 active:scale-95 transition-all text-sm tracking-wide shadow-lg shadow-brand-gold-500/10"
+                  className="group inline-flex items-center gap-2 bg-brand-green-600 text-white font-bold px-6 py-3.5 rounded-sm hover:bg-brand-green-700 active:scale-95 transition-all text-sm tracking-wide shadow-lg shadow-brand-green-500/10"
                 >
                   {slides[currentSlide].ctaText}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -149,7 +150,7 @@ export default function Hero() {
             {currentSlide === index && (
               <motion.span
                 layoutId="progressBar"
-                className="absolute left-0 top-0 h-full w-full bg-brand-gold-500"
+                className="absolute left-0 top-0 h-full w-full bg-brand-green-500"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 7, ease: "linear" }}

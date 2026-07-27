@@ -4,25 +4,38 @@
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
   
-  /* Ashipa Electric Brand Primary Color System based on Indigo (#352478) */
-  --color-brand-teal-950: #0a071e; /* Deepest indigo-black for dark backgrounds */
-  --color-brand-teal-900: #130d30; /* Deep indigo for overlays and footers */
+  /* --------------------------------------------------------------------
+     Ashipa Electric brand palette — sampled directly from the logo mark:
+       Purple  #352478   Green  #00923F   Red  #DA251D
+     -------------------------------------------------------------------- */
+
+  /* Primary — brand purple ladder (class prefix kept as `brand-teal` for
+     backwards compatibility across the existing components) */
+  --color-brand-teal-950: #0a071e; /* Deepest purple-black for dark backgrounds */
+  --color-brand-teal-900: #130d30; /* Deep purple for overlays and footers */
   --color-brand-teal-800: #1b1243; /* Rich dark violet for containers */
-  --color-brand-teal-700: #352478; /* Ashipa Electric Primary Indigo */
+  --color-brand-teal-700: #352478; /* Ashipa Electric brand purple */
   --color-brand-teal-600: #463299; /* Medium brand purple */
-  
-  /* Supporting Accent Colors */
-  --color-brand-teal-500: #d4a032; /* Warm amber — harmonizes with indigo */
-  --color-brand-teal-400: #06b6d4; /* Electric cyan - representing telemetry & software */
-  --color-brand-teal-300: #8573da; /* Lavender-indigo */
-  --color-brand-teal-200: #c9bff5; /* Light lavender-gray border */
-  --color-brand-teal-100: #e8e4fc; /* Pale lavender-gray background highlight */
-  
-  /* Complementary Accent — Warm Gold (pairs naturally with deep indigo) */
-  --color-brand-gold-300: #f5e6c4; /* light champagne for dark-bg text/borders */
-  --color-brand-gold-400: #e8c06a; /* soft amber, hover states */
-  --color-brand-gold-500: #d4a032; /* warm gold, primary CTA */
-  --color-brand-gold-600: #b8862e; /* deep gold hover / active */
+  --color-brand-teal-500: #5b44b8; /* Mid purple */
+  --color-brand-teal-400: #7059cc; /* Light-mid purple */
+  --color-brand-teal-300: #8573da; /* Lavender-purple */
+  --color-brand-teal-200: #c9bff5; /* Light lavender border */
+  --color-brand-teal-100: #e8e4fc; /* Pale lavender background highlight */
+
+  /* Highlight — brand green. Primary CTA and accent colour across the site.
+     400 clears AA on the dark purple backgrounds; 600 clears AA on white. */
+  --color-brand-green-300: #7fe3ac; /* Light mint — link hover on dark */
+  --color-brand-green-400: #00ad4a; /* Bright leaf — text/icons on dark, CTA hover */
+  --color-brand-green-500: #00923f; /* Ashipa logo green — primary CTA fill */
+  --color-brand-green-600: #007a34; /* Deep green — text/icons on light */
+  --color-brand-green-700: #00602a; /* Darkest green — active state */
+
+  /* Tertiary — brand red. Used sparingly, alongside purple and green, to
+     echo the three colours of the logo triangle. */
+  --color-brand-red-300: #ff9d97; /* Light coral — text on dark */
+  --color-brand-red-400: #e8443c; /* Soft red — hover */
+  --color-brand-red-500: #da251d; /* Ashipa logo red */
+  --color-brand-red-600: #b31d17; /* Deep red — text on light */
 }
 
 :root {

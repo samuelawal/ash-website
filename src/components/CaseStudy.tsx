@@ -13,7 +13,7 @@ export default function CaseStudy() {
     <section className="py-24 bg-brand-teal-950 text-white overflow-hidden relative">
       {/* Background visual elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-teal-800/30 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-gold-500/5 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-green-500/5 rounded-full blur-3xl pointer-events-none -ml-32 -mb-32"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -24,7 +24,7 @@ export default function CaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-xs font-bold uppercase tracking-widest text-brand-gold-400 block mb-2"
+            className="text-xs font-bold uppercase tracking-widest text-brand-green-400 block mb-2"
           >
             {data.subtitle}
           </motion.span>
@@ -57,7 +57,7 @@ export default function CaseStudy() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-teal-950/80 via-brand-teal-950/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-brand-teal-950/80 via-brand-teal-950/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white font-bold text-lg">{data.author}</p>
                 <p className="text-brand-teal-200 text-sm">{data.role}, {data.company}</p>
@@ -72,7 +72,7 @@ export default function CaseStudy() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative bg-brand-teal-900/40 border border-brand-teal-800/30 p-8 rounded-sm"
             >
-              <Quote className="w-10 h-10 text-brand-gold-500/25 absolute top-4 left-4" />
+              <Quote className="w-10 h-10 text-brand-green-500/25 absolute top-4 left-4" />
               <blockquote className="relative z-10 text-brand-teal-100/90 italic leading-relaxed text-base pl-6">
                 &ldquo;{data.quote}&rdquo;
               </blockquote>
@@ -101,7 +101,7 @@ export default function CaseStudy() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-brand-teal-900/30 border border-brand-teal-800/30 p-5 rounded-sm flex flex-col justify-center"
                 >
-                  <span className="text-2xl sm:text-3xl font-extrabold font-display text-brand-gold-400 block mb-1">
+                  <span className="text-2xl sm:text-3xl font-extrabold font-display text-brand-green-400 block mb-1">
                     {metric.value}
                   </span>
                   <span className="text-xs sm:text-sm text-brand-teal-200">
@@ -114,15 +114,15 @@ export default function CaseStudy() {
             {/* Checklist of highlights */}
             <ul className="space-y-3.5">
               <li className="flex items-center gap-3 text-sm text-brand-teal-100/90">
-                <CheckCircle2 className="w-5 h-5 text-brand-gold-500 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-brand-green-500 shrink-0" />
                 <span>Zero grid failure downtime achieved since commissioning</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-brand-teal-100/90">
-                <CheckCircle2 className="w-5 h-5 text-brand-gold-500 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-brand-green-500 shrink-0" />
                 <span>Amortization period outperformed expectations by 4 months</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-brand-teal-100/90">
-                <CheckCircle2 className="w-5 h-5 text-brand-gold-500 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-brand-green-500 shrink-0" />
                 <span>Fully integrated with live telemetry and yield auditing</span>
               </li>
             </ul>
@@ -130,7 +130,7 @@ export default function CaseStudy() {
             <div className="pt-4">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 text-brand-gold-400 font-bold hover:text-brand-gold-300 transition-colors uppercase tracking-wider text-xs"
+                className="inline-flex items-center gap-2 text-brand-green-400 font-bold hover:text-brand-green-300 transition-colors uppercase tracking-wider text-xs"
               >
                 Read Full Investment Case Study
                 <ArrowRight className="w-4 h-4" />

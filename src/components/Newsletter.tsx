@@ -28,7 +28,7 @@ export default function Newsletter() {
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(#463299_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-teal-800/20 rounded-full blur-3xl pointer-events-none -mr-20 -mb-20"></div>
-      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-gold-500/5 rounded-full blur-3xl pointer-events-none -ml-16 -mt-16"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-green-500/5 rounded-full blur-3xl pointer-events-none -ml-16 -mt-16"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-10">
         
@@ -39,7 +39,7 @@ export default function Newsletter() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-xs font-bold uppercase tracking-widest text-brand-gold-400 block"
+            className="text-xs font-bold uppercase tracking-widest text-brand-green-400 block"
           >
             Stay Informed
           </motion.span>
@@ -84,13 +84,13 @@ export default function Newsletter() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isLoading}
-                    className="w-full bg-white/5 border border-white/10 focus:border-brand-gold-500/70 focus:bg-white/10 outline-none rounded-sm py-3.5 pl-12 pr-4 text-sm text-white placeholder-white/30 transition-all font-medium"
+                    className="w-full bg-white/5 border border-white/10 focus:border-brand-green-500/70 focus:bg-white/10 outline-none rounded-sm py-3.5 pl-12 pr-4 text-sm text-white placeholder-white/30 transition-all font-medium"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="bg-brand-gold-500 hover:bg-brand-gold-400 active:scale-95 text-brand-teal-950 font-bold px-6 py-3.5 rounded-sm transition-all text-sm tracking-wide shrink-0 flex items-center justify-center gap-1.5 shadow-lg shadow-brand-gold-500/10 cursor-pointer disabled:opacity-75"
+                  className="bg-brand-green-600 hover:bg-brand-green-700 active:scale-95 text-white font-bold px-6 py-3.5 rounded-sm transition-all text-sm tracking-wide shrink-0 flex items-center justify-center gap-1.5 shadow-lg shadow-brand-green-500/10 cursor-pointer disabled:opacity-75"
                 >
                   {isLoading ? (
                     <span className="w-5 h-5 border-2 border-brand-teal-950 border-t-transparent rounded-full animate-spin"></span>
@@ -110,7 +110,7 @@ export default function Newsletter() {
                 transition={{ duration: 0.4 }}
                 className="bg-brand-teal-900/30 border border-brand-teal-800/40 p-6 rounded-sm flex items-center gap-3.5 text-left"
               >
-                <div className="p-2.5 bg-brand-gold-500/10 text-brand-gold-500 rounded-full">
+                <div className="p-2.5 bg-brand-green-500/10 text-brand-green-500 rounded-full">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <div>

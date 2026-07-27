@@ -34,18 +34,18 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-4">
             {siteData.navigation.contactInfo.phones.map((phone) => (
-              <span key={phone} className="flex items-center gap-1.5 hover:text-brand-gold-400 transition-colors">
+              <span key={phone} className="flex items-center gap-1.5 hover:text-brand-green-400 transition-colors">
                 <Phone className="w-3.5 h-3.5" />
                 <a href={phoneHref(phone)}>{phone}</a>
               </span>
             ))}
-            <span className="flex items-center gap-1.5 hover:text-brand-gold-400 transition-colors">
+            <span className="flex items-center gap-1.5 hover:text-brand-green-400 transition-colors">
               <Mail className="w-3.5 h-3.5" />
               <a href={`mailto:${siteData.navigation.contactInfo.email}`}>{siteData.navigation.contactInfo.email}</a>
             </span>
           </div>
           <div className="hidden md:flex items-center gap-2 text-brand-teal-200">
-            <span className="inline-block w-2 h-2 rounded-full bg-brand-gold-500 animate-pulse"></span>
+            <span className="inline-block w-2 h-2 rounded-full bg-brand-green-500 animate-pulse"></span>
             <span>{siteData.footer.tagline}</span>
           </div>
         </div>
@@ -67,8 +67,9 @@ export default function Header() {
                 src={siteData.logos.white}
                 alt="Ashipa Electric Logo"
                 fill
+                sizes="192px"
                 className="object-contain"
-                priority
+                preload
               />
             </div>
           </Link>
@@ -79,7 +80,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium tracking-wide text-white/95 hover:text-brand-gold-400 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-gold-500 after:transition-all hover:after:w-full"
+                className="text-sm font-medium tracking-wide text-white/95 hover:text-brand-green-400 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-green-500 after:transition-all hover:after:w-full"
               >
                 {link.name}
               </Link>
@@ -90,7 +91,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href={siteData.navigation.cta.href}
-              className="inline-flex items-center gap-1.5 bg-brand-gold-500 text-brand-teal-950 font-semibold px-5 py-2.5 rounded-sm hover:bg-brand-gold-400 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-gold-500/10"
+              className="inline-flex items-center gap-1.5 bg-brand-green-600 text-white font-semibold px-5 py-2.5 rounded-sm hover:bg-brand-green-700 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-green-500/10"
             >
               {siteData.navigation.cta.text}
               <ArrowRight className="w-4 h-4" />
@@ -101,7 +102,7 @@ export default function Header() {
           <div className="lg:hidden relative z-50">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-white hover:text-brand-gold-400 focus:outline-none transition-colors"
+              className="p-2 text-white hover:text-brand-green-400 focus:outline-none transition-colors"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -125,7 +126,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-base font-semibold text-white/90 hover:text-brand-gold-400 py-2 border-b border-white/5 transition-colors"
+                    className="text-base font-semibold text-white/90 hover:text-brand-green-400 py-2 border-b border-white/5 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -136,12 +137,12 @@ export default function Header() {
               <div className="flex flex-col gap-2 text-sm text-brand-teal-200/90 py-2">
                 {siteData.navigation.contactInfo.phones.map((phone) => (
                   <div key={phone} className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-brand-gold-500" />
+                    <Phone className="w-4 h-4 text-brand-green-500" />
                     <a href={phoneHref(phone)}>{phone}</a>
                   </div>
                 ))}
                 <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-brand-gold-500" />
+                  <Mail className="w-4 h-4 text-brand-green-500" />
                   <a href={`mailto:${siteData.navigation.contactInfo.email}`}>{siteData.navigation.contactInfo.email}</a>
                 </div>
               </div>
@@ -149,7 +150,7 @@ export default function Header() {
               <Link
                 href={siteData.navigation.cta.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center bg-brand-gold-500 text-brand-teal-950 font-bold py-3 rounded-sm hover:bg-brand-gold-400 transition-colors shadow-lg"
+                className="w-full text-center bg-brand-green-600 text-white font-bold py-3 rounded-sm hover:bg-brand-green-700 transition-colors shadow-lg"
               >
                 {siteData.navigation.cta.text}
               </Link>

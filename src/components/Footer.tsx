@@ -56,7 +56,7 @@ export default function Footer() {
                   {...(social.href.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="p-2.5 bg-white/5 hover:bg-brand-gold-500 text-white/60 hover:text-white border border-white/10 hover:border-brand-gold-500 rounded-sm transition-all duration-300 active:scale-95"
+                  className="p-2.5 bg-white/5 hover:bg-brand-green-500 text-white/60 hover:text-white border border-white/10 hover:border-brand-green-500 rounded-sm transition-all duration-300 active:scale-95"
                   aria-label={`Follow us on ${social.name}`}
                 >
                   {iconMap[social.name]}
@@ -71,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm">
               {data.links.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-brand-gold-400 transition-colors">
+                  <Link href={link.href} className="hover:text-brand-green-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -85,7 +85,7 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm">
               {data.links.services.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-brand-gold-400 transition-colors">
+                  <Link href={link.href} className="hover:text-brand-green-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -100,10 +100,10 @@ export default function Footer() {
               {siteData.blog.items.slice(0, 2).map((post) => (
                 <li key={post.title} className="group">
                   <Link href="#updates" className="block space-y-1.5">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-gold-500">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-green-500">
                       {post.category}
                     </span>
-                    <span className="block text-sm font-semibold text-white/90 group-hover:text-brand-gold-400 transition-colors line-clamp-2 leading-snug">
+                    <span className="block text-sm font-semibold text-white/90 group-hover:text-brand-green-400 transition-colors line-clamp-2 leading-snug">
                       {post.title}
                     </span>
                   </Link>
@@ -118,13 +118,13 @@ export default function Footer() {
           <p>&copy; {year} Ashipa Electric Co. All rights reserved.</p>
           
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-brand-gold-400 transition-colors">
+            <Link href="#" className="hover:text-brand-green-400 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-brand-gold-400 transition-colors">
+            <Link href="#" className="hover:text-brand-green-400 transition-colors">
               Terms of Service
             </Link>
-            <Link href="#" className="hover:text-brand-gold-400 transition-colors">
+            <Link href="#" className="hover:text-brand-green-400 transition-colors">
               Sitemap
             </Link>
           </div>

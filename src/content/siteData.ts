@@ -30,6 +30,14 @@ export interface CaseStudy {
   metrics: Metric[];
 }
 
+export interface EnvironmentItem {
+  name: string;
+  description: string;
+  image: string;
+  /** Which of the three logo colours frames this card. */
+  accent: "purple" | "green" | "red";
+}
+
 export interface StatItem {
   value: number;
   suffix: string;
@@ -107,13 +115,14 @@ export const siteData = {
   contact: {
     title: "Let's build the future of energy together.",
     description:
-      "Whether you are looking to develop a community mini-grid, deploy commercial solar, or need engineering and operations support, our team is ready to help.",
+      "Whether you are developing a distributed energy system, deploying commercial and industrial solar, or need engineering and operations support at utility scale, our team is ready to help.",
     phones: ["+1 205 202 9490", "+234 703 992 9954"],
     email: "info@ashipaelectric.com",
     address: "Victoria Island, Lagos, Nigeria",
     serviceOptions: [
       "Commercial & Industrial Solar",
-      "Mini-Grid Operations",
+      "Distributed Energy Operations",
+      "Utility-Scale Project Development",
       "Energy Monitoring & Operations",
       "Consulting & Feasibility Studies",
     ],
@@ -122,39 +131,47 @@ export const siteData = {
   hero: {
     slides: [
       {
-        tagline: "MINI-GRIDS & ECONOMIC DEVELOPMENT",
+        tagline: "UTILITY-SCALE POWER SOLUTIONS",
+        title: "Building the Power Infrastructure Africa's Growth Runs On",
+        description: "We develop, build, and operate generation and storage assets at utility scale — from multi-megawatt solar plants to grid-connected battery systems serving cities, industry, and communities alike.",
+        ctaText: "See What We Build",
+        ctaLink: "#where-we-build",
+        image: "/images/project-ashipa-branded-site.png",
+      },
+      {
+        tagline: "URBAN, COMMERCIAL & INDUSTRIAL",
+        title: "Powering Cities, Businesses and Enterprise",
+        description: "Custom solar PV and lithium battery storage systems that retire diesel generators across urban centres — eliminating outages, lowering operating costs by up to 50%, and shrinking carbon footprints for African enterprise.",
+        ctaText: "See C&I Solutions",
+        ctaLink: "#services",
+        image: "/images/blog-generator-to-solar.png",
+      },
+      {
+        tagline: "DISTRIBUTED ENERGY & ECONOMIC DEVELOPMENT",
         title: "Energy Access That Creates Real Economic Opportunity",
-        description: "Deploying intelligent, utility-grade mini-grid infrastructure to power off-grid communities, driving local entrepreneurship, agricultural value chains, and community resilience.",
-        ctaText: "Explore Our Mini-Grids",
+        description: "Deploying intelligent, utility-grade distributed energy infrastructure to power underserved communities, driving local entrepreneurship, agricultural value chains, and community resilience.",
+        ctaText: "Explore Distributed Energy",
         ctaLink: "#projects",
         image: "/images/hero-minigrid-aerial.png",
       },
       {
-        tagline: "COMMERCIAL & INDUSTRIAL SOLAR",
-        title: "Powering Businesses, Enabling Growth",
-        description: "Custom solar PV and lithium battery storage systems that eliminate power outages, lower operating costs by up to 50%, and shrink carbon footprints for African enterprise.",
-        ctaText: "See C&I Solutions",
-        ctaLink: "#services",
-        image: "/images/team-technicians-solar.png",
-      },
-      {
         tagline: "DIGITIZED UTILITY OPERATIONS",
         title: "Reliable Power, Fully Managed",
-        description: "Integrated monitoring, billing, and operations support designed for decentralized utilities to optimize efficiency, protect revenue, and serve communities reliably.",
+        description: "Integrated monitoring, billing, and operations support designed for modern utilities to optimize efficiency, protect revenue, and serve every customer reliably — at any scale.",
         ctaText: "Explore Our Services",
         ctaLink: "#services",
-        image: "/images/hero-community-powered.png",
+        image: "/images/team-technicians-solar.png",
       },
     ] as HeroSlide[],
   },
 
   offerings: {
     title: "How We Support Your Energy Transition",
-    subtitle: "We design, develop, build, and operate intelligent decentralized energy solutions tailored for African growth.",
+    subtitle: "We design, develop, build, and operate intelligent energy infrastructure at every scale — from urban commercial rooftops and industrial plants to grid-connected generation and storage.",
     items: [
       {
         title: "Energy Projects",
-        description: "End-to-end development of decentralized clean energy systems including hybrid solar-diesel-battery mini-grids and commercial rooftop solar installations.",
+        description: "End-to-end development of clean energy systems, from utility-scale solar and battery storage plants to hybrid distributed energy systems and commercial rooftop installations.",
         details: ["Engineering, Procurement & Construction (EPC)", "Power Purchase Agreements (PPAs)", "Asset Management & Operations (O&M)"],
         link: "/contact",
       },
@@ -170,7 +187,50 @@ export const siteData = {
         details: ["24/7 Remote Operations Center", "Predictive Failure Detection", "Yield & Degradation Analytics"],
         link: "/#services",
       },
+      {
+        title: "Utility-Scale Development",
+        description: "Large-format generation and storage projects for urban centres and industrial off-takers, taken from site origination and grid studies through financing, construction, and long-term operation.",
+        details: ["Grid-Connected Solar & Storage", "Urban & Industrial Power Systems", "Long-Term Asset Operation"],
+        link: "/contact",
+      },
     ] as Offering[],
+  },
+
+  whereWeBuild: {
+    eyebrow: "Scale Of Operations",
+    title: "From City Rooftops to Grid-Scale Power Plants",
+    subtitle:
+      "Ashipa Electric is building a modern utility. We engineer, finance, and operate power infrastructure across every environment our customers work in — urban centres, industrial estates, and the communities in between.",
+    environments: [
+      {
+        name: "Urban & Commercial Centres",
+        description:
+          "Behind-the-meter solar and storage for offices, hotels, estates, and retail across Lagos, Abuja, and Nigeria's fastest-growing cities — cutting diesel out of the urban energy mix.",
+        image: "/images/project-nicon.png",
+        accent: "purple",
+      },
+      {
+        name: "Utility-Scale Generation & Storage",
+        description:
+          "Ground-mount solar plants, containerized lithium storage, and grid-connected assets built to utility engineering standards, with the O&M discipline to keep them performing for decades.",
+        image: "/images/feature-battery-rack.jpg",
+        accent: "green",
+      },
+      {
+        name: "Industrial & Productive Use",
+        description:
+          "Dedicated power for manufacturing, agro-processing, and cold chain — sized for heavy motor loads and continuous production, with guaranteed uptime backed by live telemetry.",
+        image: "/images/equipment-jinko-ceesolar.png",
+        accent: "red",
+      },
+      {
+        name: "Distributed Energy Communities",
+        description:
+          "Retail micro-utilities that bring metered, billable, 24/7 power to communities beyond the reach of the national grid — the foundation our operating experience was built on.",
+        image: "/images/hero-village-minigrid.png",
+        accent: "purple",
+      },
+    ] as EnvironmentItem[],
   },
 
   caseStudy: {
@@ -218,27 +278,27 @@ export const siteData = {
 
   projects: {
     title: "Featured Projects",
-    subtitle: "Engineering solutions delivering measurable impact. Explore our portfolio of active installations across Nigeria.",
+    subtitle: "Engineering solutions delivering measurable impact. Explore our portfolio of active installations across Nigeria — from distributed energy plants to commercial and industrial systems.",
     items: [
       {
-        title: "Aguobiri Mini-Grid Project",
+        title: "Aguobiri Distributed Energy Project",
         capacity: "33 kWp Solar + Lithium Storage",
         location: "Bayelsa State, Nigeria",
-        tag: "Mini-Grid",
+        tag: "Distributed Energy",
         image: "/images/project-aguobiri.png",
       },
       {
-        title: "Kaida Tsoho Mini-Grid Project",
+        title: "Kaida Tsoho Distributed Energy Project",
         capacity: "100 kWp Solar + Hybrid Storage",
         location: "Federal Capital Territory, Nigeria",
-        tag: "Mini-Grid",
+        tag: "Distributed Energy",
         image: "/images/project-kaida-tsoho-aerial.jpg",
       },
       {
-        title: "Korokorosei Mini-Grid Project",
+        title: "Korokorosei Distributed Energy Project",
         capacity: "101 kWp Solar + Utility Storage",
         location: "Bayelsa State, Nigeria",
-        tag: "Mini-Grid",
+        tag: "Distributed Energy",
         image: "/images/project-korokorosei.png",
       },
       {
@@ -272,7 +332,7 @@ export const siteData = {
       {
         name: "Mary",
         role: "Community Shop Owner",
-        quote: "With 24/7 power from Ashipa's mini-grid, my refrigeration shop can finally run reliably. I've doubled my daily sales and no longer rely on loud, expensive diesel generators that eat into all my profits.",
+        quote: "With 24/7 power from Ashipa's distributed energy network, my refrigeration shop can finally run reliably. I've doubled my daily sales and no longer rely on loud, expensive diesel generators that eat into all my profits.",
         avatar: "/images/avatar-mary.jpg",
       },
       {
@@ -292,7 +352,7 @@ export const siteData = {
 
   blog: {
     title: "Company Insights & Updates",
-    subtitle: "Stay updated on the latest trends in renewable energy financing, operations innovation, and mini-grid deployment in Africa.",
+    subtitle: "Stay updated on the latest trends in renewable energy financing, operations innovation, and distributed energy deployment in Africa.",
     items: [
       {
         title: "Partnering with WeCyclers for Circular Energy Solutions",
@@ -303,7 +363,7 @@ export const siteData = {
         excerpt: "We are partnering to integrate clean energy into plastic collection hubs, combining recycling with solar power.",
       },
       {
-        title: "Unlocking Carbon Credits for Mini-Grid Developers in West Africa",
+        title: "Unlocking Carbon Credits for Distributed Energy Developers in West Africa",
         image: "/images/blog-minigrid-aerial.png",
         author: "Investment Team",
         date: "May 2, 2026",
@@ -316,7 +376,7 @@ export const siteData = {
         author: "Operations Team",
         date: "March 18, 2026",
         category: "Operations",
-        excerpt: "How transparent metering and live operational data help mini-grid developers protect revenue and serve communities reliably.",
+        excerpt: "How transparent metering and live operational data help distributed energy developers protect revenue and serve communities reliably.",
       },
     ] as BlogPostItem[],
   },
@@ -390,11 +450,11 @@ export const siteData = {
         location: "Abuja / Lagos, Nigeria",
         type: "Full-time",
         posted: "July 2026",
-        description: "Lead capital-raising activities, manage investor relationships, secure grants and financing facilities, and structure project finance transactions to support Ashipa Electric's growth across mini-grids and C&I solar.",
+        description: "Lead capital-raising activities, manage investor relationships, secure grants and financing facilities, and structure project finance transactions to support Ashipa Electric's growth across distributed energy, utility-scale, and C&I solar projects.",
         responsibilities: [
           "Develop and execute fundraising strategies across equity, debt, grant, and blended finance instruments",
           "Build and sustain relationships with DFIs, private equity, commercial lenders, and grant providers",
-          "Develop project finance models and support bankability assessments for mini-grid and C&I projects",
+          "Develop project finance models and support bankability assessments for distributed energy, utility-scale, and C&I projects",
           "Coordinate due diligence, data rooms, and transaction closing through to successful completion",
         ],
         requirements: [
@@ -475,11 +535,11 @@ export const siteData = {
         id: "ehs-officer",
         title: "Environmental, Health & Social (EHS) Officer",
         department: "Operations",
-        location: "Project sites / Mini-grid communities (travel across operating regions)",
+        location: "Project sites / Distributed energy communities (travel across operating regions)",
         type: "Full-time",
         posted: "July 2026",
         description:
-          "Support the implementation and day-to-day operation of Ashipa Electric's Environmental and Social Management System (ESMS) across mini-grid projects. Ensure compliance with the company's E&S Policy, national regulations, and lender/investor standards throughout site selection, design, construction, and operation — identifying, avoiding, and managing environmental and social risks while maintaining transparent relationships with host communities. Reports to the Technical Operations Manager.",
+          "Support the implementation and day-to-day operation of Ashipa Electric's Environmental and Social Management System (ESMS) across distributed energy projects. Ensure compliance with the company's E&S Policy, national regulations, and lender/investor standards throughout site selection, design, construction, and operation — identifying, avoiding, and managing environmental and social risks while maintaining transparent relationships with host communities. Reports to the Technical Operations Manager.",
         responsibilities: [
           "Maintain and update the company ESMS manual, legal register, training matrix, and E&S documentation; ensure all projects follow ESMS procedures and drive continual improvement",
           "Track E&S KPIs and present monthly E&S performance dashboards to management",
@@ -500,7 +560,7 @@ export const siteData = {
           "Familiarity with lender E&S standards (e.g., IFC Performance Standards) and national regulations is an advantage",
           "Strong grasp of E&S risk management, stakeholder engagement, and grievance handling",
           "Good report-writing, record-keeping, and independent field-based work skills; willingness to travel to remote sites",
-          "Frequent travel to mini-grid project sites, including rural communities; close coordination with contractors, communities, regulators (REA), and lenders/investors",
+          "Frequent travel to distributed energy project sites, including rural communities; close coordination with contractors, communities, regulators (REA), and lenders/investors",
         ],
         applicationUrl: "https://forms.gle/YRukTRWXRYcTKLp89",
       },
@@ -525,7 +585,7 @@ export const siteData = {
         { name: "Careers", href: "/#careers" },
       ],
       services: [
-        { name: "Mini-Grid Operations", href: "/#projects" },
+        { name: "Distributed Energy Operations", href: "/#projects" },
         { name: "Commercial & Industrial Solar", href: "/#services" },
         { name: "Project Development & EPC", href: "/#services" },
         { name: "Telemetry & IoT Audits", href: "/#services" },

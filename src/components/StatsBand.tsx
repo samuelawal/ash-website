@@ -47,7 +47,7 @@ function Counter({ value, active, duration = 2.5 }: CounterProps) {
   return (
     <span
       ref={ref}
-      className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-gold-500"
+      className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-green-500"
     >
       0
     </span>
@@ -73,8 +73,8 @@ export default function StatsBand() {
           className="object-cover object-center brightness-35 contrast-110"
           quality={80}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-teal-950 via-brand-teal-900/90 to-brand-teal-950/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-teal-950/60 via-transparent to-brand-teal-950/30"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-brand-teal-950 via-brand-teal-900/90 to-brand-teal-950/60"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-brand-teal-950/60 via-transparent to-brand-teal-950/30"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,13 +91,13 @@ export default function StatsBand() {
               {/* Animated Stat Value */}
               <div className="flex items-baseline justify-center">
                 <Counter value={item.value} active={countersActive} />
-                <span className="font-display font-extrabold text-3xl sm:text-4xl text-brand-gold-500">
+                <span className="font-display font-extrabold text-3xl sm:text-4xl text-brand-green-500">
                   {item.suffix}
                 </span>
               </div>
               
               {/* Divider Line */}
-              <div className="w-10 h-0.5 bg-brand-gold-500/50 rounded-full"></div>
+              <div className="w-10 h-0.5 bg-brand-green-500/50 rounded-full"></div>
               
               {/* Stat Description */}
               <p className="text-xs sm:text-sm font-semibold tracking-wider text-brand-teal-100/90 uppercase max-w-[200px] leading-relaxed">

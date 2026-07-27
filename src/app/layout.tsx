@@ -16,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Ashipa Electric | Intelligent Decentralized Energy Infrastructure",
-  description: "Ashipa Electric develops clean energy infrastructure—mini-grids, commercial & industrial solar, and battery storage—to power African growth.",
-  keywords: ["Ashipa Electric", "Distributed Energy Africa", "Mini-grid bayelsa", "C&I Solar Nigeria", "Renewable Energy Nigeria", "Rural Electrification"],
+  description: "Ashipa Electric develops clean energy infrastructure—utility-scale solar, distributed energy, commercial & industrial solar, and battery storage—to power African growth.",
+  keywords: ["Ashipa Electric", "Distributed Energy Africa", "Distributed Energy Nigeria", "C&I Solar Nigeria", "Renewable Energy Nigeria", "Rural Electrification", "Utility Scale Solar Africa", "C&I Solar Lagos"],
 };
 
 export default function RootLayout({

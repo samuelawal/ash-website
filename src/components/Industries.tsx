@@ -19,7 +19,7 @@ export default function Industries() {
           className="object-cover object-center brightness-[25%] contrast-110"
           quality={80}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-teal-950 via-brand-teal-950/90 to-brand-teal-950/60"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-brand-teal-950 via-brand-teal-950/90 to-brand-teal-950/60"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@ export default function Industries() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-xs font-bold uppercase tracking-widest text-brand-gold-400 block"
+            className="text-xs font-bold uppercase tracking-widest text-brand-green-400 block"
           >
             Sectors We Empower
           </motion.span>
@@ -64,12 +64,12 @@ export default function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="backdrop-blur-md bg-white/5 border border-white/10 hover:border-brand-gold-500/40 hover:bg-white/10 p-8 rounded-sm transition-all duration-300 group flex flex-col justify-between"
+              className="backdrop-blur-md bg-white/5 border border-white/10 hover:border-brand-green-500/40 hover:bg-white/10 p-8 rounded-sm transition-all duration-300 group flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Sector Identifier Badge */}
                 <div className="flex justify-between items-center">
-                  <div className="p-2.5 bg-brand-gold-500/10 border border-brand-gold-500/20 text-brand-gold-500 rounded-sm">
+                  <div className="p-2.5 bg-brand-green-500/10 border border-brand-green-500/20 text-brand-green-500 rounded-sm">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <span className="text-xs text-brand-teal-200/50 font-bold uppercase tracking-widest font-display">
@@ -78,7 +78,7 @@ export default function Industries() {
                 </div>
                 
                 {/* Name */}
-                <h3 className="text-xl font-bold font-display text-white tracking-tight group-hover:text-brand-gold-400 transition-colors">
+                <h3 className="text-xl font-bold font-display text-white tracking-tight group-hover:text-brand-green-400 transition-colors">
                   {item.name}
                 </h3>
                 
@@ -90,7 +90,7 @@ export default function Industries() {
 
               {/* Bullet checklist icon */}
               <div className="pt-6 mt-6 border-t border-white/5 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-brand-teal-200/60">
-                <Check className="w-4 h-4 text-brand-gold-500 shrink-0" />
+                <Check className="w-4 h-4 text-brand-green-500 shrink-0" />
                 <span>Audited Performance</span>
               </div>
             </motion.div>
