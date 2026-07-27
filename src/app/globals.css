@@ -22,20 +22,22 @@
   --color-brand-teal-200: #c9bff5; /* Light lavender border */
   --color-brand-teal-100: #e8e4fc; /* Pale lavender background highlight */
 
-  /* Highlight — brand green. Primary CTA and accent colour across the site.
-     400 clears AA on the dark purple backgrounds; 600 clears AA on white. */
-  --color-brand-green-300: #7fe3ac; /* Light mint — link hover on dark */
-  --color-brand-green-400: #00ad4a; /* Bright leaf — text/icons on dark, CTA hover */
-  --color-brand-green-500: #00923f; /* Ashipa logo green — primary CTA fill */
-  --color-brand-green-600: #007a34; /* Deep green — text/icons on light */
-  --color-brand-green-700: #00602a; /* Darkest green — active state */
+  /* Highlight — brand red. Purple and red are the predominant brand colours,
+     so red carries the CTAs and accents. White on 500 clears AA (4.9:1); 400
+     is the on-dark text tint and 600 the on-light one. */
+  --color-brand-red-300: #ff9d97; /* Light coral — link hover on dark */
+  --color-brand-red-400: #ff5c52; /* Bright coral — text/icons on dark */
+  --color-brand-red-500: #da251d; /* Ashipa logo red — primary CTA fill */
+  --color-brand-red-600: #b31d17; /* Deep red — text on light, CTA hover */
+  --color-brand-red-700: #8f1712; /* Darkest red — active state */
 
-  /* Tertiary — brand red. Used sparingly, alongside purple and green, to
-     echo the three colours of the logo triangle. */
-  --color-brand-red-300: #ff9d97; /* Light coral — text on dark */
-  --color-brand-red-400: #e8443c; /* Soft red — hover */
-  --color-brand-red-500: #da251d; /* Ashipa logo red */
-  --color-brand-red-600: #b31d17; /* Deep red — text on light */
+  /* Tertiary — brand green. Used sparingly to complete the logo triangle and
+     for genuinely "live/healthy" signals. */
+  --color-brand-green-300: #7fe3ac; /* Light mint — text on dark */
+  --color-brand-green-400: #00ad4a; /* Bright leaf — icons on dark */
+  --color-brand-green-500: #00923f; /* Ashipa logo green */
+  --color-brand-green-600: #007a34; /* Deep green — text on light */
+  --color-brand-green-700: #00602a; /* Darkest green — active state */
 }
 
 :root {

@@ -82,7 +82,7 @@ export default function Projects() {
                 />
                 
                 {/* Top Left Tag */}
-                <div className="absolute top-4 left-4 bg-brand-teal-950/80 backdrop-blur-md px-3 py-1.5 border border-brand-teal-800/40 rounded-sm text-xs font-semibold tracking-wide text-brand-green-400">
+                <div className="absolute top-4 left-4 bg-brand-teal-950/80 backdrop-blur-md px-3 py-1.5 border border-brand-teal-800/40 rounded-sm text-xs font-semibold tracking-wide text-white">
                   {project.tag}
                 </div>
               </div>
@@ -97,11 +97,11 @@ export default function Projects() {
                   {/* Meta Details */}
                   <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-brand-teal-900/70 font-medium">
                     <span className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-brand-green-500 shrink-0" />
+                      <MapPin className="w-4 h-4 text-brand-red-500 shrink-0" />
                       {project.location}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Zap className="w-4 h-4 text-brand-green-500 shrink-0" />
+                      <Zap className="w-4 h-4 text-brand-red-500 shrink-0" />
                       {project.capacity}
                     </span>
                   </div>
@@ -111,7 +111,7 @@ export default function Projects() {
                   <span className="text-xs font-bold uppercase tracking-wider text-brand-teal-950/40 group-hover:text-brand-teal-700 transition-colors">
                     Technical Specifications
                   </span>
-                  <div className="p-2 bg-brand-teal-100/30 group-hover:bg-brand-green-600 text-brand-teal-700 group-hover:text-white rounded-sm transition-all duration-300 shadow-sm border border-brand-teal-100/20">
+                  <div className="p-2 bg-brand-teal-100/30 group-hover:bg-brand-red-500 text-brand-teal-700 group-hover:text-white rounded-sm transition-all duration-300 shadow-sm border border-brand-teal-100/20">
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>

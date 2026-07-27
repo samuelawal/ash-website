@@ -74,9 +74,9 @@ export default function WhyDistributed() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="flex gap-4 p-6 bg-[#f6f5fa] border border-brand-teal-100/30 rounded-sm hover:border-brand-green-500/20 transition-all duration-300"
+                  className="flex gap-4 p-6 bg-[#f6f5fa] border border-brand-teal-100/30 rounded-sm hover:border-brand-red-500/20 transition-all duration-300"
                 >
-                  <div className="p-3 bg-brand-teal-950 text-brand-green-400 rounded-sm h-fit shrink-0">
+                  <div className="p-3 bg-brand-teal-950 text-brand-red-400 rounded-sm h-fit shrink-0">
                     {index === 0 ? <Target className="w-5 h-5" /> : <Compass className="w-5 h-5" />}
                   </div>
                   <div className="space-y-1.5">
@@ -124,8 +124,8 @@ export default function WhyDistributed() {
                     {/* Large Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="relative flex items-center justify-center">
-                        <span className="absolute inline-flex h-20 w-20 rounded-full bg-brand-green-500/30 animate-ping"></span>
-                        <div className="relative p-6 bg-brand-green-600 text-white rounded-full transition-transform duration-300 group-hover:scale-110 shadow-lg">
+                        <span className="absolute inline-flex h-20 w-20 rounded-full bg-brand-red-500/30 animate-ping"></span>
+                        <div className="relative p-6 bg-brand-red-500 text-white rounded-full transition-transform duration-300 group-hover:scale-110 shadow-lg">
                           <Play className="w-8 h-8 fill-white stroke-white" />
                         </div>
                       </div>
@@ -133,7 +133,7 @@ export default function WhyDistributed() {
 
                     {/* Infrastructure Tag */}
                     <div className="absolute bottom-5 left-5 bg-brand-teal-950/80 backdrop-blur-md px-4 py-2 border border-brand-teal-800/50 rounded-sm flex items-center gap-2 text-xs font-semibold tracking-wider uppercase">
-                      <Shield className="w-3.5 h-3.5 text-brand-green-500" />
+                      <Shield className="w-3.5 h-3.5 text-brand-red-500" />
                       <span>Infrastructure Film</span>
                     </div>
                   </motion.div>

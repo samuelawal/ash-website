@@ -40,7 +40,7 @@ export default function JobListings() {
           className="mb-16"
         >
           <div className="flex items-center gap-2 mb-6">
-            <Sparkles className="w-4 h-4 text-brand-green-500" />
+            <Sparkles className="w-4 h-4 text-brand-red-500" />
             <h2 className="text-xs font-bold uppercase tracking-wider text-brand-teal-700">
               Benefits & Perks
             </h2>
@@ -51,9 +51,9 @@ export default function JobListings() {
               return (
                 <div
                   key={benefit.title}
-                  className="bg-white border border-brand-teal-100/40 rounded-sm p-5 hover:border-brand-green-500/20 transition-colors"
+                  className="bg-white border border-brand-teal-100/40 rounded-sm p-5 hover:border-brand-red-500/20 transition-colors"
                 >
-                  <div className="p-2 bg-brand-green-500/10 text-brand-green-600 rounded-sm w-fit mb-3">
+                  <div className="p-2 bg-brand-red-500/10 text-brand-red-600 rounded-sm w-fit mb-3">
                     <Icon className="w-4 h-4" />
                   </div>
                   <h3 className="font-bold text-brand-teal-950 text-sm mb-1.5">{benefit.title}</h3>
@@ -75,12 +75,12 @@ export default function JobListings() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-white border border-brand-teal-100/40 rounded-sm p-6 sm:p-8 hover:border-brand-green-500/30 hover:shadow-md transition-all duration-300"
+              className="bg-white border border-brand-teal-100/40 rounded-sm p-6 sm:p-8 hover:border-brand-red-500/30 hover:shadow-md transition-all duration-300"
             >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                 <div className="space-y-4 flex-1">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-brand-green-600 bg-brand-green-500/10 border border-brand-green-500/20 px-2.5 py-1 rounded-sm">
+                    <span className="text-xs font-bold uppercase tracking-wider text-brand-red-600 bg-brand-red-500/10 border border-brand-red-500/20 px-2.5 py-1 rounded-sm">
                       {job.department}
                     </span>
                     <span className="text-xs text-brand-teal-700/60">Posted {job.posted}</span>
@@ -92,15 +92,15 @@ export default function JobListings() {
 
                   <div className="flex flex-wrap gap-4 text-sm text-brand-teal-800/70">
                     <span className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4 text-brand-green-500 shrink-0" />
+                      <MapPin className="w-4 h-4 text-brand-red-500 shrink-0" />
                       {job.location}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Briefcase className="w-4 h-4 text-brand-green-500 shrink-0" />
+                      <Briefcase className="w-4 h-4 text-brand-red-500 shrink-0" />
                       {job.type}
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Clock className="w-4 h-4 text-brand-green-500 shrink-0" />
+                      <Clock className="w-4 h-4 text-brand-red-500 shrink-0" />
                       {job.department}
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export default function JobListings() {
                       <ul className="space-y-2">
                         {job.responsibilities.map((item) => (
                           <li key={item} className="flex gap-2 text-sm text-brand-teal-900/75 leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-green-500 shrink-0 mt-2" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-red-500 shrink-0 mt-2" />
                             {item}
                           </li>
                         ))}
@@ -128,7 +128,7 @@ export default function JobListings() {
                       <ul className="space-y-2">
                         {job.requirements.map((item) => (
                           <li key={item} className="flex gap-2 text-sm text-brand-teal-900/75 leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-green-500 shrink-0 mt-2" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-red-500 shrink-0 mt-2" />
                             {item}
                           </li>
                         ))}
@@ -158,7 +158,7 @@ export default function JobListings() {
                     href={job.applicationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 bg-brand-green-600 text-white font-bold px-6 py-3.5 rounded-sm hover:bg-brand-green-700 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-green-500/10 w-full sm:w-auto justify-center"
+                    className="group inline-flex items-center gap-2 bg-brand-red-500 text-white font-bold px-6 py-3.5 rounded-sm hover:bg-brand-red-600 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-red-500/10 w-full sm:w-auto justify-center"
                   >
                     Apply Now
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -182,7 +182,7 @@ export default function JobListings() {
           </p>
           <a
             href={`mailto:${siteData.navigation.contactInfo.email}?subject=General%20Career%20Inquiry`}
-            className="inline-flex items-center gap-2 text-brand-green-400 font-semibold hover:text-brand-green-300 transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-brand-red-400 font-semibold hover:text-brand-red-300 transition-colors text-sm"
           >
             {siteData.navigation.contactInfo.email}
             <ArrowUpRight className="w-4 h-4" />

@@ -27,7 +27,7 @@ export default function ContactSection() {
 
             <div className="space-y-4 text-sm font-semibold text-brand-teal-950">
               <div className="flex items-start gap-3">
-                <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-green-500 rounded-sm shadow-sm shrink-0">
+                <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-red-500 rounded-sm shadow-sm shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div className="space-y-1.5">
@@ -43,7 +43,7 @@ export default function ContactSection() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-green-500 rounded-sm shadow-sm">
+                <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-red-500 rounded-sm shadow-sm">
                   <Mail className="w-5 h-5" />
                 </div>
                 <a href={`mailto:${contact.email}`} className="hover:text-brand-teal-600 transition-colors">
@@ -51,7 +51,7 @@ export default function ContactSection() {
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-green-500 rounded-sm shadow-sm">
+                <div className="p-2.5 bg-white border border-brand-teal-100/30 text-brand-red-500 rounded-sm shadow-sm">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <span>{contact.address}</span>
@@ -103,7 +103,7 @@ export default function ContactSection() {
                   rows={4}
                   required
                   placeholder="Describe your project size, location, and power needs..."
-                  className="w-full bg-[#f4f7f7] border border-brand-teal-100/40 focus:border-brand-green-500 outline-none rounded-sm px-4 py-3.5 text-sm text-brand-teal-950 transition-colors resize-none"
+                  className="w-full bg-[#f4f7f7] border border-brand-teal-100/40 focus:border-brand-red-500 outline-none rounded-sm px-4 py-3.5 text-sm text-brand-teal-950 transition-colors resize-none"
                 ></textarea>
               </div>
               <button

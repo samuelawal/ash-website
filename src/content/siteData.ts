@@ -214,21 +214,21 @@ export const siteData = {
         description:
           "Ground-mount solar plants, containerized lithium storage, and grid-connected assets built to utility engineering standards, with the O&M discipline to keep them performing for decades.",
         image: "/images/feature-battery-rack.jpg",
-        accent: "green",
+        accent: "red",
       },
       {
         name: "Industrial & Productive Use",
         description:
           "Dedicated power for manufacturing, agro-processing, and cold chain — sized for heavy motor loads and continuous production, with guaranteed uptime backed by live telemetry.",
         image: "/images/equipment-jinko-ceesolar.png",
-        accent: "red",
+        accent: "purple",
       },
       {
         name: "Distributed Energy Communities",
         description:
           "Retail micro-utilities that bring metered, billable, 24/7 power to communities beyond the reach of the national grid — the foundation our operating experience was built on.",
         image: "/images/hero-village-minigrid.png",
-        accent: "purple",
+        accent: "green",
       },
     ] as EnvironmentItem[],
   },
@@ -267,11 +267,11 @@ export const siteData = {
     blocks: [
       {
         title: "Our Mission",
-        description: "To build decentralized, intelligent energy infrastructure that fuels economic self-determination across Africa, bridging the energy access gap through high-performance engineering.",
+        description: "To expedite the transition of the electric power sector to a decentralized, digitized, and decarbonized future, while maintaining cost effectiveness, reliability, and resiliency.",
       },
       {
         title: "Our Vision",
-        description: "To serve as the technological backbone of Africa's clean energy transition, linking millions of businesses and households to reliable, digitized, and fully auditable power systems.",
+        description: "To be a top five global partner for decentralized energy systems.",
       },
     ],
   },

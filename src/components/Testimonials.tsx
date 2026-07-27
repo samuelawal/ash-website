@@ -59,7 +59,7 @@ export default function Testimonials() {
           {/* Testimonial Panel */}
           <div className="lg:col-span-8 relative">
             <div className="relative bg-[#f6f5fa] border border-brand-teal-100/30 p-8 sm:p-12 md:p-16 rounded-sm min-h-[380px] sm:min-h-[320px] flex flex-col justify-between shadow-sm">
-              <Quote className="w-16 h-16 text-brand-green-500/10 absolute top-6 left-6 pointer-events-none" />
+              <Quote className="w-16 h-16 text-brand-red-500/10 absolute top-6 left-6 pointer-events-none" />
               
               <AnimatePresence mode="wait">
                 <motion.div
@@ -77,7 +77,7 @@ export default function Testimonials() {
                   
                   {/* User Profile */}
                   <div className="flex items-center gap-4 pl-2 sm:pl-4">
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-brand-green-500/25">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-brand-red-500/25">
                       <Image
                         src={items[activeIndex].avatar}
                         alt={`${items[activeIndex].name} Avatar`}

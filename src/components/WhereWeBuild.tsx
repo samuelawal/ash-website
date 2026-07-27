@@ -43,7 +43,7 @@ export default function WhereWeBuild() {
               transition={{ duration: 0.5 }}
               className="text-xs font-bold uppercase tracking-widest text-brand-teal-700 flex items-center gap-2"
             >
-              <Building2 className="w-4 h-4 text-brand-green-600" />
+              <Building2 className="w-4 h-4 text-brand-red-600" />
               {data.eyebrow}
             </motion.span>
             <motion.h2
@@ -74,7 +74,7 @@ export default function WhereWeBuild() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 bg-brand-green-600 text-white font-bold px-5 py-3 rounded-sm hover:bg-brand-green-700 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-green-500/10"
+              className="group inline-flex items-center gap-2 bg-brand-red-500 text-white font-bold px-5 py-3 rounded-sm hover:bg-brand-red-600 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-red-500/10"
             >
               Discuss a Project
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

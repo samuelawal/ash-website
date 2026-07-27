@@ -81,7 +81,7 @@ export default function CareersPreview() {
                     className="bg-[#f6f5fa] border border-brand-teal-100/40 p-5 rounded-sm"
                   >
                     <div className="p-2.5 bg-brand-teal-100/40 rounded-sm border border-brand-teal-200/40 w-fit mb-4">
-                      <Icon className="w-5 h-5 text-brand-green-500" />
+                      <Icon className="w-5 h-5 text-brand-red-500" />
                     </div>
                     <h3 className="text-sm font-bold text-brand-teal-950 mb-2">{item.title}</h3>
                     <p className="text-xs text-brand-teal-900/75 leading-relaxed">{item.description}</p>
@@ -98,8 +98,8 @@ export default function CareersPreview() {
               className="bg-brand-teal-950 text-white p-6 sm:p-8 rounded-sm border border-brand-teal-800/40 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-brand-green-500/10 rounded-sm border border-brand-green-500/20 shrink-0">
-                  <Briefcase className="w-6 h-6 text-brand-green-400" />
+                <div className="p-3 bg-brand-red-500/10 rounded-sm border border-brand-red-500/20 shrink-0">
+                  <Briefcase className="w-6 h-6 text-brand-red-400" />
                 </div>
                 <div>
                   <p className="text-2xl font-extrabold font-display text-white">{openRoles} open roles</p>
@@ -110,7 +110,7 @@ export default function CareersPreview() {
               </div>
               <Link
                 href="/careers"
-                className="inline-flex items-center justify-center gap-2 bg-brand-green-600 text-white font-bold px-5 py-3 rounded-sm hover:bg-brand-green-700 transition-colors text-sm tracking-wide shrink-0"
+                className="inline-flex items-center justify-center gap-2 bg-brand-red-500 text-white font-bold px-5 py-3 rounded-sm hover:bg-brand-red-600 transition-colors text-sm tracking-wide shrink-0"
               >
                 Browse All Roles
                 <ArrowRight className="w-4 h-4" />

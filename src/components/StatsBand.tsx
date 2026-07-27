@@ -47,7 +47,7 @@ function Counter({ value, active, duration = 2.5 }: CounterProps) {
   return (
     <span
       ref={ref}
-      className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-brand-green-500"
+      className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white"
     >
       0
     </span>
@@ -91,13 +91,13 @@ export default function StatsBand() {
               {/* Animated Stat Value */}
               <div className="flex items-baseline justify-center">
                 <Counter value={item.value} active={countersActive} />
-                <span className="font-display font-extrabold text-3xl sm:text-4xl text-brand-green-500">
+                <span className="font-display font-extrabold text-3xl sm:text-4xl text-white">
                   {item.suffix}
                 </span>
               </div>
               
               {/* Divider Line */}
-              <div className="w-10 h-0.5 bg-brand-green-500/50 rounded-full"></div>
+              <div className="w-10 h-0.5 bg-brand-red-500/50 rounded-full"></div>
               
               {/* Stat Description */}
               <p className="text-xs sm:text-sm font-semibold tracking-wider text-brand-teal-100/90 uppercase max-w-[200px] leading-relaxed">

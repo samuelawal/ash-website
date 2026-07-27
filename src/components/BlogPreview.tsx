@@ -53,7 +53,7 @@ export default function BlogPreview() {
           >
             <Link
               href="#updates"
-              className="inline-flex items-center gap-2 text-brand-teal-950 font-bold border-b-2 border-brand-teal-950 pb-1 hover:text-brand-green-600 hover:border-brand-green-600 transition-colors text-sm tracking-wide"
+              className="inline-flex items-center gap-2 text-brand-teal-950 font-bold border-b-2 border-brand-teal-950 pb-1 hover:text-brand-red-600 hover:border-brand-red-600 transition-colors text-sm tracking-wide"
             >
               View All Articles
             </Link>
@@ -81,7 +81,7 @@ export default function BlogPreview() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     sizes="(max-w-768px) 100vw, 33vw"
                   />
-                  <div className="absolute top-4 left-4 bg-brand-green-600 text-white font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-sm shadow-sm">
+                  <div className="absolute top-4 left-4 bg-brand-red-500 text-white font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-sm shadow-sm">
                     {post.category}
                   </div>
                 </div>
@@ -91,11 +91,11 @@ export default function BlogPreview() {
                   {/* Meta items */}
                   <div className="flex gap-4 items-center text-xs text-brand-teal-900/60 font-medium">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-brand-green-600" />
+                      <Calendar className="w-3.5 h-3.5 text-brand-red-600" />
                       {post.date}
                     </span>
                     <span className="flex items-center gap-1">
-                      <User className="w-3.5 h-3.5 text-brand-green-600" />
+                      <User className="w-3.5 h-3.5 text-brand-red-600" />
                       {post.author}
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function BlogPreview() {
               <div className="p-6 pt-0 mt-auto">
                 <Link
                   href="#updates"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-teal-950 group-hover:text-brand-green-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-teal-950 group-hover:text-brand-red-600 transition-colors"
                 >
                   Read Article
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
