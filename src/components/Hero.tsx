@@ -41,7 +41,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] max-h-[1000px] overflow-hidden bg-brand-teal-950 text-white select-none">
+    <section className="relative w-full h-[85vh] min-h-[640px] max-h-[1000px] overflow-hidden bg-brand-teal-950 text-white select-none">
       {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="popLayout">
@@ -70,7 +70,7 @@ export default function Hero() {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center pt-28 sm:pt-36">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center pt-28 sm:pt-36 pb-24 sm:pb-28">
         <div className="max-w-3xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -100,14 +100,14 @@ export default function Hero() {
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   href={slides[currentSlide].ctaLink}
-                  className="group inline-flex items-center gap-2 bg-brand-red-500 text-white font-bold px-6 py-3.5 rounded-sm hover:bg-brand-red-600 active:scale-95 transition-all text-sm tracking-wide shadow-lg shadow-brand-red-500/10"
+                  className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-brand-red-500 text-white font-bold px-6 py-3.5 rounded-sm hover:bg-brand-red-600 active:scale-95 transition-all text-sm tracking-wide shadow-lg shadow-brand-red-500/10"
                 >
                   {slides[currentSlide].ctaText}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-transparent text-white border border-white/20 hover:border-white/50 hover:bg-white/5 font-semibold px-6 py-3.5 rounded-sm active:scale-95 transition-all text-sm tracking-wide"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-transparent text-white border border-white/20 hover:border-white/50 hover:bg-white/5 font-semibold px-6 py-3.5 rounded-sm active:scale-95 transition-all text-sm tracking-wide"
                 >
                   Consult an Engineer
                 </Link>
@@ -118,7 +118,7 @@ export default function Hero() {
       </div>
 
       {/* Slide Navigation Arrows */}
-      <div className="absolute bottom-10 right-4 sm:right-10 z-20 flex items-center gap-3">
+      <div className="absolute bottom-6 sm:bottom-10 right-4 sm:right-10 z-20 flex items-center gap-3">
         <button
           onClick={prevSlide}
           className="p-3 bg-brand-teal-950/60 hover:bg-brand-teal-900 border border-white/10 hover:border-white/20 rounded-full transition-all active:scale-95"
@@ -136,7 +136,7 @@ export default function Hero() {
       </div>
 
       {/* Slide Indicators / Progress Bars */}
-      <div className="absolute bottom-10 left-4 sm:left-10 z-20 flex gap-2">
+      <div className="absolute bottom-6 sm:bottom-10 left-4 sm:left-10 z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}

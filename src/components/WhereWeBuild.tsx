@@ -94,26 +94,25 @@ export default function WhereWeBuild() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`group relative overflow-hidden rounded-sm border border-brand-teal-100/40 bg-brand-teal-950 shadow-sm hover:shadow-xl transition-all duration-300 ${accent.ring}`}
+                className={`group relative flex min-h-104 flex-col justify-end overflow-hidden rounded-sm border border-brand-teal-100/40 bg-brand-teal-950 shadow-sm hover:shadow-xl transition-all duration-300 ${accent.ring}`}
               >
-                {/* Photograph */}
-                <div className="relative aspect-[16/10] w-full">
-                  <Image
-                    src={env.image}
-                    alt={env.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  {/* Legibility gradient for the caption block */}
-                  <div className="absolute inset-0 bg-linear-to-t from-brand-teal-950 via-brand-teal-950/60 to-brand-teal-950/5" />
-                </div>
+                {/* Photograph fills the card behind the caption */}
+                <Image
+                  src={env.image}
+                  alt={env.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                {/* Legibility gradient for the caption block */}
+                <div className="absolute inset-0 bg-linear-to-t from-brand-teal-950 via-brand-teal-950/70 to-brand-teal-950/10" />
 
                 {/* Accent rule in one of the three logo colours */}
-                <span className={`absolute top-0 left-0 h-1 w-24 ${accent.bar}`} />
+                <span className={`absolute top-0 left-0 z-10 h-1 w-24 ${accent.bar}`} />
 
-                {/* Caption */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 space-y-3">
+                {/* Caption sits in normal flow, so long copy grows the card
+                    instead of spilling out over the top of it. */}
+                <div className="relative p-6 sm:p-8 space-y-3">
                   <span
                     className={`inline-block text-[11px] font-bold uppercase tracking-widest px-2.5 py-1 border rounded-sm backdrop-blur-sm ${accent.badge}`}
                   >

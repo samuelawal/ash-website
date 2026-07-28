@@ -32,16 +32,26 @@ export default function Header() {
       {/* Top Banner (Hidden on scroll on desktop to save space) */}
       <div className={`bg-brand-teal-950/40 text-brand-teal-100/80 border-b border-brand-teal-900/30 text-xs px-4 transition-all duration-300 ease-in-out ${useSolidHeader && isScrolled ? "max-h-0 py-0 overflow-hidden border-b-0" : "max-h-12 py-2.5 overflow-hidden"}`}>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-4">
-            {siteData.navigation.contactInfo.phones.map((phone) => (
-              <span key={phone} className="flex items-center gap-1.5 hover:text-brand-red-400 transition-colors">
-                <Phone className="w-3.5 h-3.5" />
+          {/* The banner is height-clamped, so everything here has to stay on a
+              single line. Narrow screens show one phone; the rest appear once
+              there is room for them. */}
+          <div className="flex items-center gap-3 sm:gap-4 min-w-0 max-w-full">
+            {siteData.navigation.contactInfo.phones.map((phone, index) => (
+              <span
+                key={phone}
+                className={`items-center gap-1.5 whitespace-nowrap hover:text-brand-red-400 transition-colors ${
+                  index === 0 ? "flex" : "hidden sm:flex"
+                }`}
+              >
+                <Phone className="w-3.5 h-3.5 shrink-0" />
                 <a href={phoneHref(phone)}>{phone}</a>
               </span>
             ))}
-            <span className="flex items-center gap-1.5 hover:text-brand-red-400 transition-colors">
-              <Mail className="w-3.5 h-3.5" />
-              <a href={`mailto:${siteData.navigation.contactInfo.email}`}>{siteData.navigation.contactInfo.email}</a>
+            <span className="flex items-center gap-1.5 min-w-0 hover:text-brand-red-400 transition-colors">
+              <Mail className="w-3.5 h-3.5 shrink-0" />
+              <a href={`mailto:${siteData.navigation.contactInfo.email}`} className="truncate">
+                {siteData.navigation.contactInfo.email}
+              </a>
             </span>
           </div>
           <div className="hidden md:flex items-center gap-2 text-brand-teal-200">
