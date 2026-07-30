@@ -78,6 +78,22 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
+      /**
+       * Supabase's session pooler allows 15 clients TOTAL across everything
+       * touching this database. `pg` defaults to 10 per pool, and both Next's
+       * dev server and Vercel run several worker processes that each build
+       * their own pool — so the default blows the ceiling almost immediately
+       * and every query fails with EMAXCONNSESSION.
+       *
+       * One connection per serverless instance is the standard guidance; a
+       * small handful locally leaves headroom for scripts and the deployed app
+       * to connect at the same time.
+       */
+      max: process.env.VERCEL ? 1 : 3,
+      // Hand idle connections back quickly so other workers can claim them.
+      idleTimeoutMillis: 10_000,
+      // Fail fast instead of hanging when the ceiling is genuinely reached.
+      connectionTimeoutMillis: 10_000,
     },
   }),
   plugins: [...storagePlugins],
