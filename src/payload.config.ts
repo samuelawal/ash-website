@@ -85,15 +85,19 @@ export default buildConfig({
        * their own pool — so the default blows the ceiling almost immediately
        * and every query fails with EMAXCONNSESSION.
        *
-       * One connection per serverless instance is the standard guidance; a
-       * small handful locally leaves headroom for scripts and the deployed app
-       * to connect at the same time.
+       * Not 1, though: a single article request runs `generateMetadata` and the
+       * page render concurrently, and each needs a connection. At max=1 they
+       * serialise and can outlast the serverless function's own timeout, which
+       * surfaces as a blanket 500 on the heavier pages while lighter ones still
+       * pass. A few connections per instance stays well under the ceiling while
+       * letting one request's queries actually run in parallel.
        */
-      max: process.env.VERCEL ? 1 : 3,
+      max: process.env.VERCEL ? 3 : 5,
       // Hand idle connections back quickly so other workers can claim them.
       idleTimeoutMillis: 10_000,
-      // Fail fast instead of hanging when the ceiling is genuinely reached.
-      connectionTimeoutMillis: 10_000,
+      // Must stay well below the serverless function timeout, so a saturated
+      // pool fails fast and visibly instead of consuming the whole budget.
+      connectionTimeoutMillis: 5_000,
     },
   }),
   plugins: [...storagePlugins],
