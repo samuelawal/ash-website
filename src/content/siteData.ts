@@ -98,7 +98,7 @@ export const siteData = {
       { name: "About", href: "/#about" },
       { name: "Services", href: "/#services" },
       { name: "Projects", href: "/#projects" },
-      { name: "Updates", href: "/#updates" },
+      { name: "Insights", href: "/blog" },
       { name: "Careers", href: "/careers" },
       { name: "Contact", href: "/contact" },
     ],

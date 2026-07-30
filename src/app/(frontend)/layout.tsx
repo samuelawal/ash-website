@@ -15,6 +15,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  // Resolves the relative OG/Twitter image paths on article pages to absolute
+  // URLs. Without it Next falls back to localhost and shared links show no image.
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SERVER_URL ?? "https://ashipaelectric.com",
+  ),
   title: "Ashipa Electric | Intelligent Decentralized Energy Infrastructure",
   description: "Ashipa Electric develops clean energy infrastructure—utility-scale solar, distributed energy, commercial & industrial solar, and battery storage—to power African growth.",
   keywords: ["Ashipa Electric", "Distributed Energy Africa", "Distributed Energy Nigeria", "C&I Solar Nigeria", "Renewable Energy Nigeria", "Rural Electrification", "Utility Scale Solar Africa", "C&I Solar Lagos"],

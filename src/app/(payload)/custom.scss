@@ -1,0 +1,89 @@
+/* Ashipa Electric branding for the Payload admin panel.
+ *
+ * IMPORTANT: do not remap `--color-base-*`. That ladder is Payload's neutral
+ * greyscale, and `--theme-text`, `--theme-input-bg` and `--theme-elevation-*`
+ * all resolve through it — overriding it with brand colours breaks body text
+ * and input surfaces rather than accenting them. Brand the components directly
+ * instead, as below.
+ *
+ * Brand palette (from the logo mark):
+ *   Purple #352478   Green #00923F   Red #DA251D
+ */
+@layer payload {
+  /* ---------------------------------------------------------------- Logo -- */
+  .ashipa-brand {
+    display: flex;
+    align-items: center;
+
+    img {
+      display: block;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  /* The login/create-first-user wordmark. */
+  .ashipa-brand--logo img {
+    max-width: 220px;
+    height: auto;
+  }
+
+  /* The sidebar mark, which sits in a much tighter space. */
+  .ashipa-brand--icon img {
+    max-height: 24px;
+    max-width: 140px;
+  }
+
+  /* Show the variant that suits the active theme. Payload sets `data-theme`
+     on <html> server-side, so this never flashes the wrong one. */
+  .ashipa-brand__on-dark {
+    display: none;
+  }
+
+  html[data-theme="dark"] {
+    .ashipa-brand__on-light {
+      display: none;
+    }
+
+    .ashipa-brand__on-dark {
+      display: block;
+    }
+  }
+
+  /* ------------------------------------------------------- Primary actions -- */
+  /* Payload's primary button defaults to `--theme-elevation-800` (neutral dark).
+     Overriding the button's own custom properties keeps the change scoped to
+     the control, so text and surfaces elsewhere are unaffected. */
+  .btn--style-primary {
+    --bg-color: #352478;
+    --hover-bg: #463299;
+    --color: #fff;
+    --hover-color: #fff;
+  }
+
+  /* Destructive actions carry the brand red rather than Payload's default. */
+  .btn--style-error,
+  .btn--style-danger {
+    --bg-color: #da251d;
+    --hover-bg: #b31d17;
+    --color: #fff;
+    --hover-color: #fff;
+  }
+
+  /* Links and the "publish"/success affordances pick up the brand accents. */
+  a:not(.btn):not(.nav__link) {
+    color: #463299;
+
+    &:hover {
+      color: #352478;
+    }
+  }
+
+  html[data-theme="dark"] a:not(.btn):not(.nav__link) {
+    color: #8573da;
+
+    &:hover {
+      color: #c9bff5;
+    }
+  }
+}

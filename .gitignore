@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Committed as documentation — contains no real secrets.
+!.env.example
+
+# Payload uploads — user content, not source. Backed by the DB + storage volume.
+/public/media
