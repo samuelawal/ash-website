@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/content/siteData";
+import { trackEvent } from "@/lib/analytics";
 
 const benefitIcons = [Heart, Shield, Briefcase, GraduationCap, Calendar, Globe];
 
@@ -158,6 +159,17 @@ export default function JobListings() {
                     href={job.applicationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    // Opens in a new tab, so the event is not racing a
+                    // navigation away from this document.
+                    onClick={() =>
+                      trackEvent("job_application_opened", {
+                        jobId: job.id,
+                        title: job.title,
+                        department: job.department,
+                        location: job.location,
+                        type: job.type,
+                      })
+                    }
                     className="group inline-flex items-center gap-2 bg-brand-red-500 text-white font-bold px-6 py-3.5 rounded-sm hover:bg-brand-red-600 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-red-500/10 w-full sm:w-auto justify-center"
                   >
                     Apply Now
@@ -182,6 +194,9 @@ export default function JobListings() {
           </p>
           <a
             href={`mailto:${siteData.navigation.contactInfo.email}?subject=General%20Career%20Inquiry`}
+            onClick={() =>
+              trackEvent("career_inquiry_started", { channel: "mailto" })
+            }
             className="inline-flex items-center gap-2 text-brand-red-400 font-semibold hover:text-brand-red-300 transition-colors text-sm"
           >
             {siteData.navigation.contactInfo.email}

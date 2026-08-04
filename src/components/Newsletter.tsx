@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/content/siteData";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -20,6 +21,9 @@ export default function Newsletter() {
       setIsLoading(false);
       setIsSubmitted(true);
       setEmail("");
+      // The address itself is deliberately left out — it is the one field here
+      // and sending it would put a plain-text email in every event payload.
+      trackEvent("newsletter_subscribed", { placement: "newsletter_section" });
     }, 1500);
   };
 

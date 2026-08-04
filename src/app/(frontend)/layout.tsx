@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import { Suspense } from "react";
+import TraceIQPageViews from "@/components/TraceIQPageViews";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -36,6 +38,11 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#faf9fd] text-[#0d0b1a]">
+        {/* Renders nothing; reads useSearchParams, so it needs its own boundary
+            to keep the rest of the tree prerenderable. */}
+        <Suspense fallback={null}>
+          <TraceIQPageViews />
+        </Suspense>
         {children}
       </body>
     </html>

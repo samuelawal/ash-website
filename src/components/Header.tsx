@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/content/siteData";
+import { trackEvent } from "@/lib/analytics";
 
 function phoneHref(phone: string) {
   return `tel:${phone.replace(/\s/g, "")}`;
@@ -101,6 +102,13 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href={siteData.navigation.cta.href}
+              onClick={() =>
+                trackEvent("nav_cta_clicked", {
+                  placement: "desktop_header",
+                  // Which page the visitor was on when the CTA converted.
+                  from: pathname,
+                })
+              }
               className="inline-flex items-center gap-1.5 bg-brand-red-500 text-white font-semibold px-5 py-2.5 rounded-sm hover:bg-brand-red-600 active:scale-95 transition-all text-sm tracking-wide shadow-md shadow-brand-red-500/10"
             >
               {siteData.navigation.cta.text}
@@ -159,7 +167,13 @@ export default function Header() {
 
               <Link
                 href={siteData.navigation.cta.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  trackEvent("nav_cta_clicked", {
+                    placement: "mobile_menu",
+                    from: pathname,
+                  });
+                }}
                 className="w-full text-center bg-brand-red-500 text-white font-bold py-3 rounded-sm hover:bg-brand-red-600 transition-colors shadow-lg"
               >
                 {siteData.navigation.cta.text}
