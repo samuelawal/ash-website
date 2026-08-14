@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import ArticleCard from "@/components/ArticleCard";
+import FeaturedArticle from "@/components/FeaturedArticle";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Newsletter from "@/components/Newsletter";
 import { getCategories, getPublishedArticles } from "@/lib/articles";
 import { siteData } from "@/content/siteData";
 
@@ -34,6 +36,13 @@ export default async function BlogIndexPage({
   // A page number past the end is a dead URL, not an empty grid.
   if (page > 1 && articles.length === 0) notFound();
 
+  // The lead card is for the front of the publication only. Inside a category
+  // filter or on page two, every article is equally "the latest", so promoting
+  // one would be arbitrary.
+  const showLead = page === 1 && !category;
+  const lead = showLead ? articles[0] : undefined;
+  const rest = showLead ? articles.slice(1) : articles;
+
   const buildHref = (targetPage: number) => {
     const params = new URLSearchParams();
     if (category) params.set("category", category);
@@ -58,6 +67,21 @@ export default async function BlogIndexPage({
               <p className="text-base leading-relaxed text-brand-teal-900/80">
                 {siteData.blog.subtitle}
               </p>
+            </div>
+
+            {/* What the desk covers. A reader landing here from a search result
+                should not have to infer the remit from three headlines. */}
+            <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-brand-teal-100 bg-brand-teal-100 sm:grid-cols-2 lg:grid-cols-4">
+              {siteData.blog.coverage.map((topic) => (
+                <div key={topic.title} className="bg-[#f6f5fa] p-6">
+                  <h2 className="mb-2 font-display text-sm font-bold tracking-tight text-brand-teal-950">
+                    {topic.title}
+                  </h2>
+                  <p className="text-xs leading-relaxed text-brand-teal-900/75">
+                    {topic.description}
+                  </p>
+                </div>
+              ))}
             </div>
 
             {categories.length > 0 && (
@@ -98,11 +122,18 @@ export default async function BlogIndexPage({
                 No articles published yet. Check back soon.
               </p>
             ) : (
-              <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {articles.map((article) => (
-                  <ArticleCard key={article.id} article={article} />
-                ))}
-              </div>
+              <>
+                {lead && (
+                  <div className="mt-12">
+                    <FeaturedArticle article={lead} />
+                  </div>
+                )}
+                <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  {rest.map((article) => (
+                    <ArticleCard key={article.id} article={article} />
+                  ))}
+                </div>
+              </>
             )}
 
             {totalPages > 1 && (
@@ -140,6 +171,7 @@ export default async function BlogIndexPage({
             )}
           </div>
         </section>
+        <Newsletter />
       </main>
       <Footer />
     </>

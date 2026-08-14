@@ -6,13 +6,10 @@ const nextConfig: NextConfig = {
     // Next 16 narrowed the default to `[75]`, which silently coerced the
     // `quality` props already used by the hero and section backgrounds.
     qualities: [75, 80, 85],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'wp.ashipaelectric.com',
-        pathname: '/**',
-      },
-    ],
+    // No `remotePatterns`: every image is now either a local file under /public
+    // or served by Payload. The one former entry, wp.ashipaelectric.com, is
+    // behind bot protection that returns an HTML captcha to server-side
+    // fetches, so the optimiser could never load from it anyway.
   },
 };
 

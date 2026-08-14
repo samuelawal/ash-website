@@ -14,7 +14,8 @@ export type SiteEvent =
   | "contact_request_submitted"
   | "job_application_opened"
   | "career_inquiry_started"
-  | "nav_cta_clicked";
+  | "nav_cta_clicked"
+  | "resource_requested";
 
 /**
  * Both helpers are safe to call anywhere, including during SSR: the SDK is only

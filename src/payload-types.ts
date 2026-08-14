@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     articles: Article;
     categories: Category;
+    enquiries: Enquiry;
     media: Media;
     users: User;
     'payload-kv': PayloadKv;
@@ -81,6 +82,7 @@ export interface Config {
   collectionsSelect: {
     articles: ArticlesSelect<false> | ArticlesSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    enquiries: EnquiriesSelect<false> | EnquiriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -264,6 +266,110 @@ export interface Category {
   createdAt: string;
 }
 /**
+ * Inbound requests from the website. Work the queue by status — new leads appear at the top.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "enquiries".
+ */
+export interface Enquiry {
+  id: number;
+  requestType:
+    | 'ci-feasibility'
+    | 'energy-audit'
+    | 'minigrid-partnership'
+    | 'ev-charging'
+    | 'remote-monitoring'
+    | 'epc-om'
+    | 'general';
+  status: 'new' | 'contacted' | 'qualified' | 'proposal-sent' | 'won' | 'lost' | 'spam';
+  fullName: string;
+  email: string;
+  phone?: string | null;
+  jobTitle?: string | null;
+  company?: string | null;
+  companySize?: ('1-10' | '11-50' | '51-200' | '201-1000' | '1000+' | 'public-sector' | 'community' | 'dfi') | null;
+  sector?:
+    | (
+        | 'agro-processing'
+        | 'manufacturing'
+        | 'commercial-property'
+        | 'hospitality'
+        | 'healthcare'
+        | 'education'
+        | 'telecoms'
+        | 'mining'
+        | 'transport'
+        | 'residential-estate'
+        | 'public-infrastructure'
+        | 'rural-community'
+        | 'other'
+      )
+    | null;
+  location?:
+    | (
+        | 'Abia'
+        | 'Adamawa'
+        | 'Akwa Ibom'
+        | 'Anambra'
+        | 'Bauchi'
+        | 'Bayelsa'
+        | 'Benue'
+        | 'Borno'
+        | 'Cross River'
+        | 'Delta'
+        | 'Ebonyi'
+        | 'Edo'
+        | 'Ekiti'
+        | 'Enugu'
+        | 'Federal Capital Territory'
+        | 'Gombe'
+        | 'Imo'
+        | 'Jigawa'
+        | 'Kaduna'
+        | 'Kano'
+        | 'Katsina'
+        | 'Kebbi'
+        | 'Kogi'
+        | 'Kwara'
+        | 'Lagos'
+        | 'Nasarawa'
+        | 'Niger'
+        | 'Ogun'
+        | 'Ondo'
+        | 'Osun'
+        | 'Oyo'
+        | 'Plateau'
+        | 'Rivers'
+        | 'Sokoto'
+        | 'Taraba'
+        | 'Yobe'
+        | 'Zamfara'
+        | 'outside-nigeria'
+      )
+    | null;
+  siteAddress?: string | null;
+  peakDemandKw?: number | null;
+  monthlyConsumptionKwh?: number | null;
+  /**
+   * Grid tariff plus diesel, as reported by the enquirer.
+   */
+  monthlyEnergySpend?: number | null;
+  dailyOutageHours?: number | null;
+  currentPowerSource?: ('grid' | 'grid-plus-generator' | 'generator-only' | 'existing-solar' | 'none') | null;
+  timeline?: ('immediate' | '3-months' | '3-12-months' | 'exploring') | null;
+  message?: string | null;
+  /**
+   * The page the form was submitted from.
+   */
+  sourcePage?: string | null;
+  /**
+   * Staff-only. Never shown to the enquirer.
+   */
+  internalNotes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -417,6 +523,10 @@ export interface PayloadLockedDocument {
         value: number | Category;
       } | null)
     | ({
+        relationTo: 'enquiries';
+        value: number | Enquiry;
+      } | null)
+    | ({
         relationTo: 'media';
         value: number | Media;
       } | null)
@@ -494,6 +604,34 @@ export interface ArticlesSelect<T extends boolean = true> {
 export interface CategoriesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "enquiries_select".
+ */
+export interface EnquiriesSelect<T extends boolean = true> {
+  requestType?: T;
+  status?: T;
+  fullName?: T;
+  email?: T;
+  phone?: T;
+  jobTitle?: T;
+  company?: T;
+  companySize?: T;
+  sector?: T;
+  location?: T;
+  siteAddress?: T;
+  peakDemandKw?: T;
+  monthlyConsumptionKwh?: T;
+  monthlyEnergySpend?: T;
+  dailyOutageHours?: T;
+  currentPowerSource?: T;
+  timeline?: T;
+  message?: T;
+  sourcePage?: T;
+  internalNotes?: T;
   updatedAt?: T;
   createdAt?: T;
 }

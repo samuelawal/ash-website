@@ -7,7 +7,12 @@ const SITE_URL = process.env.NEXT_PUBLIC_SERVER_URL ?? "https://ashipaelectric.c
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/ev-charging`, changeFrequency: "monthly", priority: 0.8 },
+    // MONITORING DISABLED — the route is parked, so keep it out of the sitemap.
+    // { url: `${SITE_URL}/monitoring`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/resources`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/compliance`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/careers`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.5 },
   ];

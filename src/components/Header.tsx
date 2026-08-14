@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
+import { Menu, X, Phone, Mail, ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/content/siteData";
 import { trackEvent } from "@/lib/analytics";
@@ -87,15 +87,46 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {siteData.navigation.links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium tracking-wide text-white/95 hover:text-brand-red-400 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-red-500 after:transition-all hover:after:w-full"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {siteData.navigation.links.map((link) =>
+              link.children ? (
+                // Opens on hover and, for keyboard users, whenever anything
+                // inside it holds focus — so the submenu is reachable by Tab
+                // without a click handler.
+                <div key={link.name} className="relative group">
+                  <Link
+                    href={link.href}
+                    className="flex items-center gap-1 text-sm font-medium tracking-wide text-white/95 hover:text-brand-red-400 transition-colors"
+                  >
+                    {link.name}
+                    <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
+                  </Link>
+                  {/* The padded wrapper keeps the pointer inside the group while
+                      it travels from the trigger down to the panel. */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 invisible opacity-0 translate-y-1 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0">
+                    <ul className="min-w-56 bg-brand-teal-950/95 backdrop-blur-xl border border-brand-teal-800/60 rounded-sm shadow-2xl py-2">
+                      {link.children.map((child) => (
+                        <li key={child.name}>
+                          <Link
+                            href={child.href}
+                            className="block px-5 py-2.5 text-sm font-medium text-white/85 hover:text-white hover:bg-brand-teal-800/60 transition-colors whitespace-nowrap"
+                          >
+                            {child.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm font-medium tracking-wide text-white/95 hover:text-brand-red-400 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-brand-red-500 after:transition-all hover:after:w-full"
+                >
+                  {link.name}
+                </Link>
+              ),
+            )}
           </nav>
 
           {/* Action CTA */}
@@ -140,14 +171,33 @@ export default function Header() {
             >
               <div className="flex flex-col gap-4">
                 {siteData.navigation.links.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-base font-semibold text-white/90 hover:text-brand-red-400 py-2 border-b border-white/5 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  <div key={link.name} className="border-b border-white/5">
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-base font-semibold text-white/90 hover:text-brand-red-400 py-2 transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                    {/* No accordion on mobile: a tap that only reveals more taps
+                        is friction on a slow connection. The children are just
+                        listed. */}
+                    {link.children && (
+                      <ul className="pb-2 pl-4 border-l border-white/10 ml-1 space-y-1">
+                        {link.children.map((child) => (
+                          <li key={child.name}>
+                            <Link
+                              href={child.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block py-1.5 text-sm text-white/70 hover:text-brand-red-400 transition-colors"
+                            >
+                              {child.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 ))}
               </div>
 

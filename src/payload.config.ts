@@ -10,6 +10,7 @@ import sharp from "sharp";
 
 import { Articles } from "./collections/Articles";
 import { Categories } from "./collections/Categories";
+import { Enquiries } from "./collections/Enquiries";
 import { Media } from "./collections/Media";
 import { Users } from "./collections/Users";
 
@@ -69,7 +70,7 @@ export default buildConfig({
       },
     },
   },
-  collections: [Articles, Categories, Media, Users],
+  collections: [Articles, Categories, Enquiries, Media, Users],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

@@ -38,6 +38,21 @@
   --color-brand-green-500: #00923f; /* Ashipa logo green */
   --color-brand-green-600: #007a34; /* Deep green — text on light */
   --color-brand-green-700: #00602a; /* Darkest green — active state */
+
+  /* --------------------------------------------------------------------
+     Reserved status scale — asset state only (good / watch / fault). Never
+     used decoratively or as a series colour: if one of these appears, it
+     means something is in that state.
+
+     Validated against the #0a071e monitoring surface for lightness band,
+     chroma floor, normal-vision separation, and 3:1 contrast. Good and fault
+     remain near-identical under deuteranopia — that is inherent to any
+     green/red pair — so every status in the UI ships an icon and a text
+     label, and colour is never the only channel carrying the state.
+     -------------------------------------------------------------------- */
+  --color-status-good: #00ad4a;
+  --color-status-watch: #bf8a10;
+  --color-status-fault: #ee4f52;
 }
 
 :root {

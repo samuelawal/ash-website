@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Zap, Activity, ClipboardCopy, Building2 } from "lucide-react";
+import { ArrowUpRight, Zap, Activity, ClipboardCopy, Building2, PlugZap } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/content/siteData";
 
@@ -10,6 +10,7 @@ const iconMap = [
   <ClipboardCopy key="clipboard" className="w-6 h-6 text-brand-red-500" />,
   <Activity key="activity" className="w-6 h-6 text-brand-red-500" />,
   <Building2 key="building" className="w-6 h-6 text-brand-red-500" />,
+  <PlugZap key="plug" className="w-6 h-6 text-brand-red-500" />,
 ];
 
 export default function Offerings() {
