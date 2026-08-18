@@ -230,8 +230,11 @@ export const siteData = {
     phones: ["+1 205 202 9490", "+234 703 992 9954"],
     email: "info@ashipaelectric.com",
     /**
-     * Offices exactly as they appear on the company letterhead, which is the
-     * source of truth for these — keep them in step if it changes.
+     * The Lagos and US offices are as they appear on the company letterhead.
+     *
+     * Abuja is deliberately NOT: the letterhead still lists the old Garki Area 2
+     * address, and the Asokoro address below supersedes it. Do not "correct" it
+     * back from the letterhead.
      */
     offices: [
       {
@@ -240,10 +243,7 @@ export const siteData = {
       },
       {
         label: "Abuja",
-        lines: [
-          "9, Jalingo Street, Garki Area 2",
-          "First Entrance After Area 2 Shopping Mall, FCT",
-        ],
+        lines: ["23 Mungo Park Close", "Asokoro, Abuja"],
       },
       {
         label: "Houston",

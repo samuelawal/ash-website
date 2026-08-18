@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShieldCheck, FileCheck2, ArrowRight } from "lucide-react";
+import { ShieldCheck, FileCheck2 } from "lucide-react";
 
 import { siteData } from "@/content/siteData";
-import { enquiryHref } from "@/lib/contact";
-import { trackEvent } from "@/lib/analytics";
 
 export default function Compliance({
   /** `h1` when this section is the whole page, `h2` when it is one of many. */
@@ -85,26 +82,6 @@ export default function Compliance({
               </figcaption>
             </figure>
 
-            <div className="pt-2">
-              <Link
-                href={enquiryHref("minigrid-partnership")}
-                onClick={() =>
-                  trackEvent("resource_requested", {
-                    resource: "Compliance pack",
-                    kind: "request",
-                    requestType: "minigrid-partnership",
-                  })
-                }
-                className="inline-flex items-center gap-2 text-sm font-bold text-white border border-white/20 hover:border-brand-red-500 hover:bg-brand-red-500 px-5 py-3 rounded-sm transition-all group"
-              >
-                Request our compliance pack
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <p className="text-[11px] text-brand-teal-200/50 mt-3 leading-relaxed max-w-xs">
-                Lenders and off-takers can request our ESMS manual, E&amp;S policy, and
-                current permit register under NDA.
-              </p>
-            </div>
           </div>
 
           <div className="lg:col-span-8">
