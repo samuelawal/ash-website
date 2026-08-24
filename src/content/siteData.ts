@@ -449,7 +449,7 @@ export const siteData = {
         capacity: "95.4 kWp Commercial Solar PV",
         location: "Nigeria",
         tag: "Commercial & Industrial",
-        image: "/images/project-dobi-farm.png",
+        image: "/images/project-dobi-farm.jpg",
       },
     ] as ProjectItem[],
   },
@@ -554,7 +554,7 @@ export const siteData = {
   newsletter: {
     title: "Get energy insights for decision makers",
     subtitle: "Join leading executives, energy operators, and policymakers who receive our monthly research briefing on African decentralized infrastructure.",
-    placeholder: "Enter your professional email",
+    placeholder: "Enter email",
     cta: "Subscribe Now",
   },
 
